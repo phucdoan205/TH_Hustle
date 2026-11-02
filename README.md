@@ -65,7 +65,14 @@ Sự kết hợp liên ngành giữa 3 chuyên ngành:
 
 ---
 
-## 🚀 Hướng Dẫn Chạy Thử Nghiệm
+## 🌐 Trực Tiếp Trên GitHub Pages (Live Demo Domain)
+
+Trang web đã được cấu hình triển khai trực tuyến tại domain chính thức:
+👉 **[https://phucdoan205.github.io/TH_Hustle/](https://phucdoan205.github.io/TH_Hustle/)**
+
+---
+
+## 🚀 Hướng Dẫn Chạy Cục Bộ (Local)
 
 Mở trình duyệt và truy cập:
 ```text
