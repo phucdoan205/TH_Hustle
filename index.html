@@ -80,7 +80,7 @@
       <div class="hidden sm:flex items-center gap-2.5 shrink-0">
         <button onclick="openModal('dropoffModal')" class="px-4 py-2 text-xs xl:text-sm font-bold rounded-xl bg-gradient-to-r from-cyberCyan to-ecoGreen hover:from-cyan-600 hover:to-emerald-600 text-white shadow-md shadow-emerald-500/25 transition-all flex items-center gap-2 group whitespace-nowrap">
           <i class="fa-solid fa-box-archive group-hover:rotate-12 transition-transform text-xs"></i>
-          <span>Gửi rác ngay</span>
+          <span>Gửi pin ngay</span>
         </button>
         <a href="#team" class="px-3.5 py-2 text-xs xl:text-sm font-semibold rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 hover:border-actionOrange/70 transition-all flex items-center gap-1.5 whitespace-nowrap">
           <i class="fa-solid fa-award text-actionOrange text-xs"></i>
@@ -200,11 +200,6 @@
               <!-- Banner Image with Hover Glow -->
               <div class="relative overflow-hidden rounded-2xl border border-emerald-100 shadow-md">
                 <img src="assets/banner.jpg" alt="LHU Green Mission - Powered by TH Hustle - Dự án thu gom pin cũ vì môi trường xanh" class="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out">
-                
-                <!-- Live Campaign Badge -->
-                <div class="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-emerald-200 text-[11px] font-bold text-ecoGreen shadow-sm">
-                  <span class="w-2 h-2 rounded-full bg-ecoGreen animate-ping"></span> Chiến Dịch Đang Diễn Ra
-                </div>
               </div>
 
               <!-- Campaign Quick Details Bar Below Banner -->
@@ -221,27 +216,6 @@
                   <i class="fa-solid fa-location-dot text-[11px]"></i> Điểm Thu Gom
                 </a>
               </div>
-
-              <!-- Floating Sub-badge: Chuẩn EPR 2026 -->
-              <div class="absolute -top-2.5 -right-2.5 glass-card px-3 py-1.5 rounded-2xl shadow-lg border border-emerald-200 flex items-center gap-1.5 bg-white text-left">
-                <i class="fa-solid fa-shield-halved text-ecoGreen text-xs"></i>
-                <div>
-                  <div class="text-[10px] font-extrabold text-slate-900 leading-tight">Chuẩn EPR 2026</div>
-                  <div class="text-[8px] text-slate-500">Nghị định 08/2022/NĐ-CP</div>
-                </div>
-              </div>
-
-              <!-- Floating Sub-badge: Voucher -->
-              <div class="absolute -bottom-2 -left-2 glass-card px-3 py-1.5 rounded-2xl shadow-lg border border-orange-200 flex items-center gap-2 bg-white text-left animate-float">
-                <div class="w-6 h-6 rounded-lg bg-orange-100 flex items-center justify-center text-actionOrange text-[11px] font-black">
-                  %
-                </div>
-                <div>
-                  <div class="text-[10px] font-extrabold text-slate-900 leading-tight">Đổi Pin Nhận Voucher</div>
-                  <div class="text-[8px] text-slate-500">Shopee &bull; Lazada &bull; Tiki</div>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
@@ -843,13 +817,10 @@
           <div class="loc-item p-4 rounded-2xl glass-card border border-emerald-300 hover:border-ecoGreen transition-all cursor-pointer bg-white shadow-xs" data-city="hanoi" onclick="focusDropoff(1)">
             <div class="flex items-start justify-between">
               <div>
-                <span class="text-[10px] uppercase font-bold text-actionOrange bg-orange-100 px-2 py-0.5 rounded border border-orange-200">Hub TMĐT</span>
+                <span class="text-[10px] uppercase font-bold text-actionOrange bg-orange-100 px-2 py-0.5 rounded border border-orange-200">Trường Đại Học</span>
                 <h4 class="text-sm font-bold text-slate-900 mt-1.5">Bưu cục Shopee Xpress - Cầu Giấy</h4>
                 <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> Số 144 Xuân Thủy, Cầu Giấy, Hà Nội</p>
               </div>
-              <span class="text-[10px] text-ecoGreen font-mono font-bold flex items-center gap-1">
-                <span class="w-2 h-2 rounded-full bg-ecoGreen animate-pulse"></span> Còn 82% chỗ
-              </span>
             </div>
             <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
               <span><i class="fa-regular fa-clock mr-1"></i>07:30 - 21:00</span>
@@ -861,13 +832,10 @@
           <div class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-city="hanoi" onclick="focusDropoff(2)">
             <div class="flex items-start justify-between">
               <div>
-                <span class="text-[10px] uppercase font-bold text-cyan-800 bg-cyan-100 px-2 py-0.5 rounded border border-cyan-200">Cửa hàng công nghệ</span>
+                <span class="text-[10px] uppercase font-bold text-cyan-800 bg-cyan-100 px-2 py-0.5 rounded border border-cyan-200">Trường Đại Học</span>
                 <h4 class="text-sm font-bold text-slate-900 mt-1.5">FPT Shop Smart Hub - Đống Đa</h4>
                 <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> 216 Thái Hà, Trung Liệt, Đống Đa, Hà Nội</p>
               </div>
-              <span class="text-[10px] text-ecoGreen font-mono font-bold flex items-center gap-1">
-                <span class="w-2 h-2 rounded-full bg-ecoGreen animate-pulse"></span> Còn 95% chỗ
-              </span>
             </div>
             <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
               <span><i class="fa-regular fa-clock mr-1"></i>08:00 - 22:00</span>
@@ -879,56 +847,16 @@
           <div class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-city="hcm" onclick="focusDropoff(3)">
             <div class="flex items-start justify-between">
               <div>
-                <span class="text-[10px] uppercase font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">Hub Logistics</span>
+                <span class="text-[10px] uppercase font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">Trường Đại Học</span>
                 <h4 class="text-sm font-bold text-slate-900 mt-1.5">Trạm Viettel Post - Quận 1</h4>
                 <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> 125 Hai Bà Trưng, Bến Nghé, Quận 1, TP. HCM</p>
               </div>
-              <span class="text-[10px] text-amber-600 font-mono font-bold flex items-center gap-1">
-                <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span> Còn 45% chỗ
-              </span>
             </div>
             <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
               <span><i class="fa-regular fa-clock mr-1"></i>07:00 - 20:30</span>
               <span class="text-cyberCyan font-bold hover:underline">Chỉ đường <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
             </div>
           </div>
-
-          <!-- Location 4 -->
-          <div class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-city="hcm" onclick="focusDropoff(4)">
-            <div class="flex items-start justify-between">
-              <div>
-                <span class="text-[10px] uppercase font-bold text-actionOrange bg-orange-100 px-2 py-0.5 rounded border border-orange-200">Hub TMĐT</span>
-                <h4 class="text-sm font-bold text-slate-900 mt-1.5">Lazada Drop-Off Station - Bình Thạnh</h4>
-                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> 194 Bạch Đằng, Phường 24, Bình Thạnh, TP. HCM</p>
-              </div>
-              <span class="text-[10px] text-ecoGreen font-mono font-bold flex items-center gap-1">
-                <span class="w-2 h-2 rounded-full bg-ecoGreen"></span> Còn 70% chỗ
-              </span>
-            </div>
-            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-              <span><i class="fa-regular fa-clock mr-1"></i>08:00 - 21:00</span>
-              <span class="text-cyberCyan font-bold hover:underline">Chỉ đường <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
-            </div>
-          </div>
-
-          <!-- Location 5 -->
-          <div class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-city="danang" onclick="focusDropoff(5)">
-            <div class="flex items-start justify-between">
-              <div>
-                <span class="text-[10px] uppercase font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded border border-purple-200">Trường Đại Học</span>
-                <h4 class="text-sm font-bold text-slate-900 mt-1.5">Smart Box Ký Túc Xá ĐH Bách Khoa ĐN</h4>
-                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> 54 Nguyễn Lương Bằng, Liên Chiểu, Đà Nẵng</p>
-              </div>
-              <span class="text-[10px] text-ecoGreen font-mono font-bold flex items-center gap-1">
-                <span class="w-2 h-2 rounded-full bg-ecoGreen"></span> Còn 90% chỗ
-              </span>
-            </div>
-            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-              <span><i class="fa-regular fa-clock mr-1"></i>24/7 Tự phục vụ</span>
-              <span class="text-cyberCyan font-bold hover:underline">Chỉ đường <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
-            </div>
-          </div>
-
         </div>
 
         <!-- Interactive Map Visual Mockup (7 Cols) -->
@@ -1065,7 +993,7 @@
               Sức Mạnh Liên Ngành Tạo Nên Đột Phá
             </h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Dự án EcoTech Loop được xây dựng từ sự kết hợp chặt chẽ giữa 3 trụ cột tri thức, đảm bảo tính khả thi về mặt kỹ thuật, hấp dẫn về mặt hình ảnh và sinh lời bền vững về mặt kinh doanh:
+              Dự án LHU GREEN được xây dựng từ sự kết hợp chặt chẽ giữa 3 trụ cột tri thức, đảm bảo tính khả thi về mặt kỹ thuật, hấp dẫn về mặt hình ảnh và sinh lời bền vững về mặt kinh doanh:
             </p>
 
             <div class="space-y-3 pt-1">
@@ -1109,16 +1037,16 @@
                 </div>
                 <div class="flex flex-wrap gap-2">
                   <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-orange-50 border border-orange-200 text-xs font-bold text-slate-900 shadow-2xs">
-                    <i class="fa-solid fa-crown text-actionOrange text-[10px]"></i> Lê Nguyễn Hoàng Anh <span class="text-[10px] text-actionOrange font-semibold">(Trưởng Nhóm)</span>
+                    <i class="fa-solid fa-crown text-actionOrange text-[10px]"></i> Lê Thị Thanh Tâm <span class="text-[10px] text-actionOrange font-semibold">(Trưởng Nhóm)</span>
                   </span>
                   <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-slate-50 border border-slate-200 text-xs font-medium text-slate-800">
-                    Trần Nhật Hà <span class="text-[10px] text-slate-500">(TMĐT)</span>
+                    Trần Nhật Hà <span class="text-[10px] text-slate-500">(TTĐPT)</span>
                   </span>
                   <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-purple-50 border border-purple-200 text-xs font-medium text-purple-900">
-                    Thị Hoà <span class="text-[10px] text-purple-600">(Truyền thông)</span>
+                    Thị Hoà <span class="text-[10px] text-purple-600">(TMĐT)</span>
                   </span>
                   <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-slate-50 border border-slate-200 text-xs font-medium text-slate-800">
-                    Lê Thị Thanh Tâm <span class="text-[10px] text-slate-500">(TMĐT)</span>
+                    Lê Nguyên Hoàng Anh <span class="text-[10px] text-slate-500">(TMĐT)</span>
                   </span>
                   <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-cyan-50 border border-cyan-200 text-xs font-medium text-cyan-900">
                     Đoàn Văn Phúc <span class="text-[10px] text-cyberCyan font-semibold">(CNTT)</span>
