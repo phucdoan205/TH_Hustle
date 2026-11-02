@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTech Loop | Nền Tảng Logistics Ngược & Kinh Tế Tuần Hoàn Rác Thải Điện Tử TMĐT</title>
+  <meta name="description" content="EcoTech Loop - Đề án Cuộc thi Sinh viên Kinh doanh số 2026 của Đội TH HUSTLE (Đại học Lạc Hồng). Giải pháp O2O thu gom rác điện tử, đổi voucher mua sắm và hỗ trợ tuân thủ EPR.">
+  <meta name="keywords" content="rác thải điện tử, logistics ngược, kinh tế tuần hoàn, e-waste, e-commerce, EPR, voucher xanh, Green Points, TH Hustle, LHU, VECOM">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Tailwind Theme Configuration (Bright & Fresh) -->
+  <script src="js/tailwind-config.js"></script>
+
+  <!-- Custom Styles (Bright Glassmorphism, Animations, Utilities) -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-ecoGreen selection:text-white overflow-x-hidden relative">
+
+  <!-- ==================== BRIGHT AMBIENT BACKGROUND GLOWS ==================== -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-200/35 rounded-full blur-[110px]"></div>
+    <div class="absolute top-1/4 -right-32 w-[32rem] h-[32rem] bg-cyan-200/40 rounded-full blur-[130px]"></div>
+    <div class="absolute top-2/3 left-1/4 w-96 h-96 bg-amber-200/30 rounded-full blur-[120px]"></div>
+    <div class="absolute inset-0 bg-circuit-grid opacity-70"></div>
+  </div>
+
+  <!-- ==================== HEADER / NAVIGATION BAR ==================== -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 glass-nav rounded-2xl mx-2 sm:mx-4 mt-2 border border-slate-200/80 shadow-sm flex items-center justify-between">
+      
+      <!-- Logo: Circuit Leaf + Brand Name -->
+      <a href="#" class="flex items-center gap-2.5 shrink-0 group focus:outline-none" aria-label="Trang chủ EcoTech Loop">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-cyberCyan to-ecoGreen p-0.5 shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-all duration-300">
+          <div class="w-full h-full bg-white rounded-[10px] flex items-center justify-center relative overflow-hidden">
+            <i class="fa-solid fa-leaf text-ecoGreen text-base absolute group-hover:scale-110 transition-transform"></i>
+            <i class="fa-solid fa-microchip text-cyberCyan text-[10px] absolute -bottom-0.5 -right-0.5 opacity-80"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-extrabold text-xl tracking-tight text-slate-900">EcoTech<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyberCyan to-ecoGreen">Loop</span></span>
+            <span class="px-1.5 py-0.5 text-[9px] uppercase tracking-wider font-bold bg-emerald-100 text-ecoGreen-dark border border-emerald-200 rounded-full">E-Waste</span>
+          </div>
+          <p class="text-[10px] text-slate-500 hidden xl:block tracking-wide whitespace-nowrap">Reverse Logistics & Circular Tech</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links (No wrapping, whitespace-nowrap) -->
+      <div class="hidden lg:flex items-center gap-3 xl:gap-6 text-xs xl:text-sm font-semibold text-slate-700 shrink-0">
+        <a href="#problem" class="hover:text-actionOrange transition-colors flex items-center gap-1.5 whitespace-nowrap py-1">
+          <i class="fa-solid fa-triangle-exclamation text-xs text-actionOrange"></i>
+          <span>Vấn Đề</span>
+        </a>
+        <a href="#solution" class="hover:text-ecoGreen transition-colors flex items-center gap-1.5 whitespace-nowrap py-1">
+          <i class="fa-solid fa-arrows-spin text-xs text-ecoGreen"></i>
+          <span>Mô Hình O2O</span>
+        </a>
+        <a href="#calculator" class="hover:text-actionOrange transition-colors flex items-center gap-1.5 whitespace-nowrap py-1">
+          <i class="fa-solid fa-calculator text-xs text-cyberCyan"></i>
+          <span>Đổi Voucher</span>
+        </a>
+        <a href="#dropoff-map" class="hover:text-ecoGreen transition-colors flex items-center gap-1.5 whitespace-nowrap py-1">
+          <i class="fa-solid fa-map-location-dot text-xs text-ecoGreen"></i>
+          <span>Điểm Thu Gom</span>
+        </a>
+        <a href="#team" class="hover:text-cyberCyan transition-colors flex items-center gap-1.5 whitespace-nowrap py-1 text-slate-900 font-bold bg-slate-100 hover:bg-emerald-50 px-2.5 py-1 rounded-lg border border-slate-200/80">
+          <i class="fa-solid fa-users text-xs text-cyberCyan"></i>
+          <span>Đội Ngũ</span>
+        </a>
+      </div>
+
+      <!-- Header Action CTAs -->
+      <div class="hidden sm:flex items-center gap-2.5 shrink-0">
+        <button onclick="openModal('dropoffModal')" class="px-4 py-2 text-xs xl:text-sm font-bold rounded-xl bg-gradient-to-r from-cyberCyan to-ecoGreen hover:from-cyan-600 hover:to-emerald-600 text-white shadow-md shadow-emerald-500/25 transition-all flex items-center gap-2 group whitespace-nowrap">
+          <i class="fa-solid fa-box-archive group-hover:rotate-12 transition-transform text-xs"></i>
+          <span>Gửi rác ngay</span>
+        </button>
+        <a href="#team" class="px-3.5 py-2 text-xs xl:text-sm font-semibold rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 hover:border-actionOrange/70 transition-all flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-award text-actionOrange text-xs"></i>
+          <span>TH Hustle</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="lg:hidden text-slate-700 hover:text-slate-900 p-2 rounded-lg bg-white border border-slate-200 shadow-sm" aria-label="Mở menu">
+        <i class="fa-solid fa-bars text-lg"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden mx-3 mt-2 p-5 glass-nav rounded-2xl border border-slate-200 flex flex-col gap-3.5 shadow-xl">
+      <a href="#problem" onclick="toggleMobileMenu()" class="text-sm font-semibold text-slate-700 hover:text-actionOrange flex items-center gap-2.5">
+        <i class="fa-solid fa-triangle-exclamation text-actionOrange w-5"></i>Vấn Đề Rác Thải TMĐT
+      </a>
+      <a href="#solution" onclick="toggleMobileMenu()" class="text-sm font-semibold text-slate-700 hover:text-ecoGreen flex items-center gap-2.5">
+        <i class="fa-solid fa-arrows-spin text-ecoGreen w-5"></i>Mô Hình O2O Khép Kín
+      </a>
+      <a href="#calculator" onclick="toggleMobileMenu()" class="text-sm font-semibold text-slate-700 hover:text-actionOrange flex items-center gap-2.5">
+        <i class="fa-solid fa-calculator text-cyberCyan w-5"></i>Mô Phỏng Tích Điểm & Voucher
+      </a>
+      <a href="#dropoff-map" onclick="toggleMobileMenu()" class="text-sm font-semibold text-slate-700 hover:text-ecoGreen flex items-center gap-2.5">
+        <i class="fa-solid fa-map-location-dot text-ecoGreen w-5"></i>Bản Đồ Điểm Thu Gom
+      </a>
+      <a href="#team" onclick="toggleMobileMenu()" class="text-sm font-bold text-slate-900 hover:text-cyberCyan flex items-center gap-2.5 bg-emerald-50 p-2 rounded-xl border border-emerald-200">
+        <i class="fa-solid fa-users text-cyberCyan w-5"></i>Đội Ngũ TH HUSTLE (LHU)
+      </a>
+      <div class="pt-3 border-t border-slate-200 flex flex-col gap-2">
+        <button onclick="toggleMobileMenu(); openModal('dropoffModal');" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyberCyan to-ecoGreen text-white font-bold text-center text-sm shadow-md">
+          <i class="fa-solid fa-box-archive mr-2"></i>Gửi rác công nghệ ngay
+        </button>
+        <button onclick="toggleMobileMenu(); openModal('b2bModal');" class="w-full py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-center text-sm bg-white hover:bg-slate-50">
+          <i class="fa-solid fa-handshake mr-2 text-actionOrange"></i>Liên kết Doanh nghiệp & EPR
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="relative z-10 pt-24 sm:pt-28">
+
+    <!-- ==================== HERO SECTION (BRIGHT & ENERGETIC) ==================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Left Column: Typography & CTAs -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Pill Tag: Digital Commerce & Circular Economy -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/90 text-emerald-800 text-xs font-bold tracking-wide shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-ecoGreen animate-ping"></span>
+            <span>Digital Business Contest 2026</span>
+            <span class="text-slate-300">|</span>
+            <span class="text-slate-600 font-semibold"><i class="fa-solid fa-graduation-cap text-cyberCyan mr-1"></i>Đội TH HUSTLE (LHU)</span>
+          </div>
+
+          <!-- Main Catchy Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+            Biến <span class="text-transparent bg-clip-text bg-gradient-to-r from-actionOrange via-amber-500 to-actionOrange">Rác Thải Công Nghệ</span> Thành <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyberCyan via-teal-600 to-ecoGreen">Giá Trị Mua Sắm Xanh</span>
+          </h1>
+
+          <!-- Subheadline with core value proposition -->
+          <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Hạ tầng logistics số kết nối liền mạch giữa <strong class="text-slate-900">Người tiêu dùng TMĐT</strong>, <strong class="text-slate-900">Sàn mua sắm trực tuyến</strong> và <strong class="text-slate-900">Nhà máy tái chế</strong>. Thu gom pin, sạc, tai nghe, thiết bị cũ – Đổi lấy Voucher mua sắm và tín chỉ xanh minh bạch.
+          </p>
+
+          <!-- Action CTA Group -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-1">
+            <a href="#calculator" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-actionOrange to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold text-center shadow-lg shadow-orange-500/25 hover:shadow-orange-500/35 transition-all flex items-center justify-center gap-2 group whitespace-nowrap">
+              <i class="fa-solid fa-ticket-simple group-hover:scale-125 transition-transform"></i>
+              <span>Mô Phỏng Đổi Voucher</span>
+              <span class="text-xs bg-black/15 px-2 py-0.5 rounded-md text-amber-100">Ưu đãi ngay</span>
+            </a>
+
+            <a href="#team" class="w-full sm:w-auto px-7 py-3.5 rounded-xl border border-slate-300 hover:border-cyberCyan bg-white hover:bg-slate-50 text-slate-800 font-bold text-center transition-all flex items-center justify-center gap-2 group shadow-sm hover:shadow-md whitespace-nowrap">
+              <i class="fa-solid fa-users text-cyberCyan group-hover:text-ecoGreen transition-colors"></i>
+              <span>Gặp Gỡ Đội Ngũ TH HUSTLE</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges & Metrics -->
+          <div class="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+            <div class="p-3 bg-white rounded-2xl border border-slate-200/80 shadow-xs">
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                <span id="counterKg">18.450</span><span class="text-cyberCyan text-lg">+</span>
+              </div>
+              <div class="text-xs text-slate-500 mt-0.5">kg e-waste thu hồi</div>
+            </div>
+            <div class="p-3 bg-white rounded-2xl border border-slate-200/80 shadow-xs">
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                <span id="counterPartners">65</span><span class="text-ecoGreen text-lg">+</span>
+              </div>
+              <div class="text-xs text-slate-500 mt-0.5">Đối tác TMĐT & Brand</div>
+            </div>
+            <div class="p-3 bg-white rounded-2xl border border-slate-200/80 shadow-xs">
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                100<span class="text-actionOrange text-lg">%</span>
+              </div>
+              <div class="text-xs text-slate-500 mt-0.5">Quy chuẩn Bộ TN&MT</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Circular Visual Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md">
+            
+            <!-- Glow Behind Card -->
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 via-emerald-400 to-amber-400 rounded-3xl blur-xl opacity-30 animate-pulseGlow"></div>
+
+            <!-- Main Hero Card (Bright Glassmorphism) -->
+            <div class="relative rounded-3xl glass-card p-6 shadow-xl border border-slate-200 overflow-hidden bg-white/95">
+              
+              <!-- Card Header -->
+              <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                  <span class="ml-2 text-xs font-mono font-bold text-slate-600">SmartDrop_OS v2.6.4</span>
+                </div>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-bold text-ecoGreen">
+                  <span class="w-1.5 h-1.5 rounded-full bg-ecoGreen animate-ping"></span> Trực tuyến
+                </span>
+              </div>
+
+              <!-- Digital Circular Flow Visual -->
+              <div class="my-6 relative py-4">
+                <div class="flex items-center justify-between relative z-10">
+                  
+                  <!-- Node 1: User / Smart Locker -->
+                  <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-50 border border-orange-200 flex items-center justify-center text-actionOrange shadow-md group hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+                    </div>
+                    <span class="text-[11px] font-bold text-slate-800 mt-2">Người Dùng</span>
+                    <span class="text-[10px] text-actionOrange font-mono font-bold">+120 Points</span>
+                  </div>
+
+                  <!-- Connector Arrow -->
+                  <div class="flex-1 mx-2 relative h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-actionOrange via-cyberCyan to-ecoGreen animate-pulse"></div>
+                  </div>
+
+                  <!-- Node 2: Reverse Logistics Hub -->
+                  <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyberCyan shadow-md hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-truck-ramp-box text-xl"></i>
+                    </div>
+                    <span class="text-[11px] font-bold text-slate-800 mt-2">Logistics O2O</span>
+                    <span class="text-[10px] text-cyberCyan font-mono font-bold">Tối ưu lộ trình</span>
+                  </div>
+
+                  <!-- Connector Arrow -->
+                  <div class="flex-1 mx-2 relative h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-cyberCyan to-ecoGreen"></div>
+                  </div>
+
+                  <!-- Node 3: Metallurgical Refinery -->
+                  <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-ecoGreen shadow-md hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-recycle text-xl"></i>
+                    </div>
+                    <span class="text-[11px] font-bold text-slate-800 mt-2">Nhà Máy Tái Chế</span>
+                    <span class="text-[10px] text-ecoGreen font-mono font-bold">Thu hồi 98%</span>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Live Transaction Ticket Simulation -->
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-2.5">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-slate-600 font-semibold"><i class="fa-solid fa-bolt text-amber-500 mr-1.5"></i>Giao dịch thu gom tức thì:</span>
+                  <span class="font-mono text-[10px] text-slate-500 font-bold">#EW-2026-8941</span>
+                </div>
+                <div class="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-200 shadow-xs">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyberCyan text-sm">
+                      <i class="fa-solid fa-battery-half"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900">4 Pin dự phòng + 2 Cáp sạc</div>
+                      <div class="text-[10px] text-slate-500">Điểm Drop-off: Hub Shopee Express Cầu Giấy</div>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-xs font-extrabold text-actionOrange">+Voucher 50K</div>
+                    <div class="text-[10px] font-bold text-ecoGreen">-1.8 kg CO2e</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Sub-badge 1: Voucher Shopee / Lazada -->
+              <div class="absolute -bottom-3 -left-3 glass-card px-3.5 py-2 rounded-2xl shadow-lg border border-orange-200 flex items-center gap-2.5 bg-white animate-float">
+                <div class="w-7 h-7 rounded-lg bg-orange-100 flex items-center justify-center text-actionOrange text-xs font-black">
+                  %
+                </div>
+                <div>
+                  <div class="text-[11px] font-bold text-slate-900">Voucher Giảm 15%</div>
+                  <div class="text-[9px] text-slate-500">Phụ kiện công nghệ xanh</div>
+                </div>
+              </div>
+
+              <!-- Floating Sub-badge 2: EPR Certified -->
+              <div class="absolute -top-3 -right-3 glass-card px-3.5 py-2 rounded-2xl shadow-lg border border-emerald-200 flex items-center gap-2 bg-white">
+                <i class="fa-solid fa-shield-halved text-ecoGreen text-sm"></i>
+                <div class="text-left">
+                  <div class="text-[11px] font-bold text-slate-900">Chuẩn EPR 2026</div>
+                  <div class="text-[9px] text-slate-500">Nghị định 08/2022/NĐ-CP</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== LOGO CLOUD: ECOSYSTEM & PARTNERS ==================== -->
+    <section class="border-y border-slate-200/80 bg-white/70 py-7">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-xs uppercase tracking-widest font-extrabold text-slate-500 mb-5">
+          Hệ sinh thái liên minh TMĐT &bull; Logistics &bull; Tái chế chuẩn Bộ TN&MT
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center justify-center">
+          <div class="flex items-center justify-center gap-2 font-bold text-slate-600 hover:text-actionOrange transition-colors p-2 rounded-xl hover:bg-slate-50">
+            <i class="fa-solid fa-bag-shopping text-xl text-actionOrange"></i>
+            <span class="tracking-tight text-sm">Shopee Partner</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 font-bold text-slate-600 hover:text-cyberCyan transition-colors p-2 rounded-xl hover:bg-slate-50">
+            <i class="fa-solid fa-cart-shopping text-xl text-cyberCyan"></i>
+            <span class="tracking-tight text-sm">Lazada Eco</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 font-bold text-slate-600 hover:text-blue-600 transition-colors p-2 rounded-xl hover:bg-slate-50">
+            <i class="fa-solid fa-truck-fast text-xl text-blue-500"></i>
+            <span class="tracking-tight text-sm">Viettel Post</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 font-bold text-slate-600 hover:text-amber-600 transition-colors p-2 rounded-xl hover:bg-slate-50">
+            <i class="fa-solid fa-cubes-stacked text-xl text-amber-500"></i>
+            <span class="tracking-tight text-sm">FPT Shop Hub</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 font-bold text-slate-600 hover:text-pink-600 transition-colors p-2 rounded-xl hover:bg-slate-50">
+            <i class="fa-solid fa-wallet text-xl text-pink-500"></i>
+            <span class="tracking-tight text-sm">MoMo Green</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 font-bold text-slate-600 hover:text-ecoGreen transition-colors p-2 rounded-xl hover:bg-slate-50">
+            <i class="fa-solid fa-industry text-xl text-ecoGreen"></i>
+            <span class="tracking-tight text-sm">GreenTech Refinery</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: PROBLEM & URGENCY ==================== -->
+    <section id="problem" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 border border-orange-200 text-actionOrange text-xs font-bold uppercase tracking-wider mb-4">
+          <i class="fa-solid fa-fire-flame-curved"></i> Thực trạng nhức nhối & Nghịch lý TMĐT
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Cơn Sốt Mua Sắm Siêu Tốc & Mặt Tối <span class="text-transparent bg-clip-text bg-gradient-to-r from-actionOrange to-red-600">90% Rác Điện Tử Bị Chôn Lấp</span>
+        </h2>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+          Mỗi mùa siêu sale TMĐT, hàng triệu phụ kiện giá rẻ (dây sạc, tai nghe, pin sạc) được vận chuyển đến người dùng. Khi hỏng, đa số bị vứt bừa bãi vào bãi rác sinh hoạt.
+        </p>
+      </div>
+
+      <!-- Linear vs Circular Comparison Visual Banner -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 mb-12 border border-slate-200 shadow-md">
+        <h3 class="text-xs uppercase tracking-wider font-extrabold text-slate-500 mb-6 text-center">
+          So sánh: Chuỗi Cung Ứng Tuyến Tính Cũ vs. Mô Hình Kinh Tế Tuần Hoàn EcoTech Loop
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+          
+          <!-- Bad Practice: Linear Economy -->
+          <div class="p-6 rounded-2xl bg-red-50/70 border border-red-200 space-y-4 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-bold uppercase text-red-600 tracking-wider flex items-center gap-1.5">
+                  <i class="fa-solid fa-xmark text-sm"></i> Mô Hình Tuyến Tính Cũ (Take - Make - Waste)
+                </span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-red-200 text-red-800 font-mono font-bold">Ô nhiễm nặng</span>
+              </div>
+              <div class="flex items-center justify-between text-center gap-2 text-xs font-semibold text-slate-700 my-4">
+                <div class="p-2.5 rounded-xl bg-white flex-1 border border-red-200 shadow-xs">
+                  <i class="fa-solid fa-truck-pickup text-red-500 block mb-1 text-sm"></i>Khai thác & Bán ồ ạt
+                </div>
+                <i class="fa-solid fa-arrow-right text-red-400 text-xs"></i>
+                <div class="p-2.5 rounded-xl bg-white flex-1 border border-red-200 shadow-xs">
+                  <i class="fa-solid fa-trash-can text-red-500 block mb-1 text-sm"></i>Bãi rác sinh hoạt
+                </div>
+                <i class="fa-solid fa-arrow-right text-red-400 text-xs"></i>
+                <div class="p-2.5 rounded-xl bg-white flex-1 border border-red-200 shadow-xs">
+                  <i class="fa-solid fa-skull-crossbones text-red-500 block mb-1 text-sm"></i>Nhiễm độc chì/thủy ngân
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed border-t border-red-100 pt-3">
+              &bull; 92.4% phụ kiện hỏng vứt lẫn rác sinh hoạt, làm rò rỉ kim loại nặng độc hại vào đất và mạch nước ngầm. Doanh nghiệp đối mặt mức phạt EPR nặng nề.
+            </p>
+          </div>
+
+          <!-- Good Practice: Circular Closed-Loop -->
+          <div class="p-6 rounded-2xl bg-emerald-50/80 border border-emerald-200 space-y-4 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-bold uppercase text-ecoGreen-dark tracking-wider flex items-center gap-1.5">
+                  <i class="fa-solid fa-check text-sm"></i> Vòng Lặp Tuần Hoàn EcoTech Loop
+                </span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-200 text-emerald-800 font-mono font-bold">Khép kín 100%</span>
+              </div>
+              <div class="flex items-center justify-between text-center gap-2 text-xs font-semibold text-slate-700 my-4">
+                <div class="p-2.5 rounded-xl bg-white flex-1 border border-emerald-200 shadow-xs">
+                  <i class="fa-solid fa-box-open text-ecoGreen block mb-1 text-sm"></i>Smart Drop-off
+                </div>
+                <i class="fa-solid fa-arrow-right text-ecoGreen text-xs"></i>
+                <div class="p-2.5 rounded-xl bg-white flex-1 border border-emerald-200 shadow-xs">
+                  <i class="fa-solid fa-ticket text-actionOrange block mb-1 text-sm"></i>Nhận Voucher TMĐT
+                </div>
+                <i class="fa-solid fa-arrow-right text-ecoGreen text-xs"></i>
+                <div class="p-2.5 rounded-xl bg-white flex-1 border border-emerald-200 shadow-xs">
+                  <i class="fa-solid fa-gem text-cyberCyan block mb-1 text-sm"></i>Thu hồi kim loại quý
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed border-t border-emerald-100 pt-3">
+              &bull; Đạt tiêu chuẩn RoHS & WEEE; biến rác thải thành nguồn nguyên liệu thứ cấp giá trị cao, tạo lực đẩy mua sắm xanh bền vững trên sàn TMĐT.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 3 Alarm Problem Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- Card 1 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between bg-white border border-slate-200">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-6 text-xl">
+              <i class="fa-solid fa-droplet-slash"></i>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-2">Ô Nhiễm Kim Loại Nặng</h4>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Chỉ 1 viên pin Lithium hoặc cúc áo vứt sai cách có thể làm ô nhiễm <strong class="text-slate-900">500 lít nước ngầm</strong> và <strong class="text-slate-900">1m³ đất</strong> trong 50 năm do chứa Cadmium, Chì, Thủy ngân cực độc.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-bold text-red-600">
+            <span>Nguy hại cấp độ 1</span>
+            <span>Bộ TN&MT cảnh báo</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between bg-white border border-slate-200">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-6 text-xl">
+              <i class="fa-solid fa-coins"></i>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-2">Lãng Phí Kim Loại Quý</h4>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Mỗi tấn bo mạch điện thoại thông minh chứa lượng vàng gấp <strong class="text-slate-900">100 lần</strong> so với 1 tấn quặng tự nhiên. Tuy nhiên, 80% giá trị này bị chôn vùi vô ích tại các bãi rác sinh hoạt.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-bold text-amber-600">
+            <span>Vàng &bull; Bạc &bull; Đồng &bull; Coban</span>
+            <span>Hàng nghìn tỷ VNĐ</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between bg-white border border-slate-200">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-orange-100 text-actionOrange flex items-center justify-center mb-6 text-xl">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-2">Áp Lực Pháp Lý EPR</h4>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Nghị định 08/2022/NĐ-CP bắt buộc các nhà sản xuất, sàn TMĐT phải thu hồi rác thải điện tử theo tỷ lệ cam kết. Doanh nghiệp thiếu kênh thu hồi đối mặt chi phí đóng phạt hàng tỷ đồng.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-bold text-actionOrange">
+            <span>Luật BVMT 2020</span>
+            <span>Bắt buộc thực thi</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION 4: INTERACTIVE DIGITAL SOLUTION (O2O) ==================== -->
+    <section id="solution" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-4">
+          <i class="fa-solid fa-network-wired"></i> Kiến Trúc Giải Pháp O2O Toàn Diện
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Quy Trình 4 Bước Khép Kín: <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyberCyan to-ecoGreen">Từ Nhà Bạn Đến Nhà Máy Tái Chế</span>
+        </h2>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+          Ứng dụng công nghệ Internet vạn vật (IoT), thuật toán tối ưu lộ trình xe thu gom (Reverse Logistics Optimization) và cơ chế Gamification đổi voucher trực tuyến.
+        </p>
+      </div>
+
+      <!-- 4-Step Interactive Navigation & Card Showcase -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Step Selector Navigation (Left 5 Cols) -->
+        <div class="lg:col-span-5 space-y-3.5" id="stepSelectorContainer">
+          
+          <!-- Step 1 Button -->
+          <div onclick="switchStep(1)" id="stepBtn1" class="p-4 sm:p-5 rounded-2xl glass-card border-2 border-ecoGreen bg-white shadow-md cursor-pointer transition-all flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyberCyan to-ecoGreen text-white font-extrabold flex items-center justify-center shrink-0 shadow-sm">
+              01
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                Phân Loại & Tra Cứu Điểm Thu Gom
+              </h4>
+              <p class="text-xs text-slate-600 mt-1">Gom phụ kiện cũ (pin, dây sạc, tai nghe) và mở Web App xem Smart Drop-box gần nhất.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 Button -->
+          <div onclick="switchStep(2)" id="stepBtn2" class="p-4 sm:p-5 rounded-2xl glass-card border border-slate-200/90 hover:border-slate-300 bg-white/70 hover:bg-white cursor-pointer transition-all flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 font-extrabold flex items-center justify-center shrink-0 border border-slate-200">
+              02
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                Thả Rác Tại Smart Drop-box & Quét QR
+              </h4>
+              <p class="text-xs text-slate-500 mt-1">Thả đồ vào tủ thông minh tại bưu cục/cửa hàng đối tác, quét mã QR định danh bao bì.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 Button -->
+          <div onclick="switchStep(3)" id="stepBtn3" class="p-4 sm:p-5 rounded-2xl glass-card border border-slate-200/90 hover:border-slate-300 bg-white/70 hover:bg-white cursor-pointer transition-all flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 font-extrabold flex items-center justify-center shrink-0 border border-slate-200">
+              03
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                Nhận "Green Points" & Tích Lũy Điểm
+              </h4>
+              <p class="text-xs text-slate-500 mt-1">Hệ thống cảm biến cân đo tự động ghi nhận khối lượng và cộng điểm vào ví điện tử tức thì.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 Button -->
+          <div onclick="switchStep(4)" id="stepBtn4" class="p-4 sm:p-5 rounded-2xl glass-card border border-slate-200/90 hover:border-slate-300 bg-white/70 hover:bg-white cursor-pointer transition-all flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 font-extrabold flex items-center justify-center shrink-0 border border-slate-200">
+              04
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                Đổi Voucher TMĐT & Logistics Nhà Máy
+              </h4>
+              <p class="text-xs text-slate-500 mt-1">Đổi mã giảm giá mua sắm Shopee/Lazada; rác được xe đối tác đưa về nhà máy tinh chế.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Step Interactive Details Showcase (Right 7 Cols) -->
+        <div class="lg:col-span-7">
+          <div class="glass-card rounded-3xl p-7 sm:p-9 border border-slate-200 relative overflow-hidden min-h-[440px] flex flex-col justify-between bg-white shadow-xl" id="stepDetailBox">
+            
+            <!-- Dynamic Content Injected via JS -->
+            <div id="stepDetailContent" class="space-y-6">
+              <!-- Content for Step 1 by default -->
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-ecoGreen border border-emerald-200">
+                  Giai đoạn 1 &bull; Người Tiêu Dùng O2O
+                </span>
+                <span class="text-xs font-mono text-slate-500 font-semibold">Thời gian: ~30 giây</span>
+              </div>
+
+              <div class="space-y-3">
+                <h3 class="text-2xl font-extrabold text-slate-900">Phân loại dễ dàng ngay tại bàn làm việc</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Người dùng gom các loại rác điện tử nhỏ lẻ phát sinh từ mua sắm online: củ sạc cháy, cáp đứt ngầm, pin sạc dự phòng chai phù, tai nghe Bluetooth hỏng 1 bên. Mở ứng dụng EcoTech Loop, bản đồ GPS sẽ chỉ đường đến hộp Smart Drop-box gần nhất chỉ trong bán kính 500m.
+                </p>
+              </div>
+
+              <!-- Feature Checklist -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <div class="flex items-center gap-2.5 text-xs text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200/80">
+                  <i class="fa-solid fa-circle-check text-ecoGreen"></i>
+                  <span>AI nhận diện qua camera điện thoại</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-xs text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200/80">
+                  <i class="fa-solid fa-circle-check text-ecoGreen"></i>
+                  <span>Tự động ước lượng trọng lượng & điểm</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-xs text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200/80">
+                  <i class="fa-solid fa-circle-check text-ecoGreen"></i>
+                  <span>Định vị 150+ điểm bưu cục & cửa hàng</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-xs text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200/80">
+                  <i class="fa-solid fa-circle-check text-ecoGreen"></i>
+                  <span>Hỗ trợ gom tận nhà khi đơn TMĐT giao</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Action Footer inside Box -->
+            <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs text-slate-500">
+                <i class="fa-solid fa-shield-halved text-cyberCyan"></i>
+                <span>Bảo mật dữ liệu cá nhân &bull; Tiêu hủy chip an toàn</span>
+              </div>
+              <button onclick="openModal('dropoffModal')" class="text-xs font-bold text-actionOrange hover:text-orange-700 flex items-center gap-1">
+                Trải nghiệm thử <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION 5: LIVE CALCULATOR & VOUCHER SIMULATOR ==================== -->
+    <section id="calculator" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 border border-orange-200 text-actionOrange text-xs font-bold uppercase tracking-wider mb-4">
+          <i class="fa-solid fa-calculator"></i> Công Cụ Tính Toán Giá Trị Xanh
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Mô Phỏng Định Giá Rác Thải: <span class="text-transparent bg-clip-text bg-gradient-to-r from-actionOrange via-amber-500 to-orange-600">Đổi Điểm & Nhận Voucher</span>
+        </h2>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+          Chọn loại thiết bị bạn muốn quyên góp. Thuật toán sẽ tính toán ngay lập tức khối lượng rác giải cứu, lượng CO₂e giảm phát thải và phần thưởng voucher mua sắm tương ứng!
+        </p>
+      </div>
+
+      <!-- Main Calculator Widget Container -->
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl relative bg-white">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left: Waste Category Selection & Quantity (7 Cols) -->
+          <div class="lg:col-span-7 space-y-6">
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <i class="fa-solid fa-layer-group text-cyberCyan"></i>
+              Bước 1: Chọn chủng loại rác thải công nghệ bạn đang có
+            </h3>
+
+            <!-- Item Selection Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              
+              <!-- Item 1: Pin các loại -->
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-400 transition-all flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-red-100 text-red-500 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-battery-quarter"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-slate-900">Pin sạc / Pin tiểu</h4>
+                    <p class="text-[10px] text-slate-500">AA, AAA, Pin cúc áo, Pin sạc</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="updateQty('battery', -1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center active:scale-95 text-xs font-bold shadow-xs">-</button>
+                  <span id="qty-battery" class="font-mono font-bold text-slate-900 text-sm w-5 text-center">4</span>
+                  <button onclick="updateQty('battery', 1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center active:scale-95 text-xs font-bold shadow-xs">+</button>
+                </div>
+              </div>
+
+              <!-- Item 2: Dây cáp & Củ sạc -->
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-400 transition-all flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyberCyan flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-plug"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-slate-900">Dây cáp / Củ sạc</h4>
+                    <p class="text-[10px] text-slate-500">Type-C, Lightning, Củ sạc cũ</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="updateQty('cable', -1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center active:scale-95 text-xs font-bold shadow-xs">-</button>
+                  <span id="qty-cable" class="font-mono font-bold text-slate-900 text-sm w-5 text-center">2</span>
+                  <button onclick="updateQty('cable', 1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center active:scale-95 text-xs font-bold shadow-xs">+</button>
+                </div>
+              </div>
+
+              <!-- Item 3: Tai nghe / Loa bluetooth -->
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-400 transition-all flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-orange-100 text-actionOrange flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-headphones"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-slate-900">Tai nghe / Loa mini</h4>
+                    <p class="text-[10px] text-slate-500">Earbuds hỏng, loa mini cũ</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="updateQty('headphone', -1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center active:scale-95 text-xs font-bold shadow-xs">-</button>
+                  <span id="qty-headphone" class="font-mono font-bold text-slate-900 text-sm w-5 text-center">1</span>
+                  <button onclick="updateQty('headphone', 1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center active:scale-95 text-xs font-bold shadow-xs">+</button>
+                </div>
+              </div>
+
+              <!-- Item 4: Điện thoại cũ / Máy tính bảng vỡ -->
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-400 transition-all flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-emerald-100 text-ecoGreen flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-slate-900">Điện thoại / Tablet</h4>
+                    <p class="text-[10px] text-slate-500">Hỏng màn, chết nguồn, vỡ nát</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="updateQty('phone', -1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center active:scale-95 text-xs font-bold shadow-xs">-</button>
+                  <span id="qty-phone" class="font-mono font-bold text-slate-900 text-sm w-5 text-center">1</span>
+                  <button onclick="updateQty('phone', 1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center active:scale-95 text-xs font-bold shadow-xs">+</button>
+                </div>
+              </div>
+
+              <!-- Item 5: Phụ kiện vi tính (Chuột, Phím, Webcam) -->
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-400 transition-all flex items-center justify-between sm:col-span-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-keyboard"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-slate-900">Chuột, Bàn phím & Phụ kiện máy tính</h4>
+                    <p class="text-[10px] text-slate-500">Bàn phím liệt phím, chuột hỏng click, USB, webcam cũ</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="updateQty('accessory', -1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center active:scale-95 text-xs font-bold shadow-xs">-</button>
+                  <span id="qty-accessory" class="font-mono font-bold text-slate-900 text-sm w-5 text-center">0</span>
+                  <button onclick="updateQty('accessory', 1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center active:scale-95 text-xs font-bold shadow-xs">+</button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- E-Commerce Partner Selector -->
+            <div class="pt-4 border-t border-slate-200">
+              <label class="text-xs font-bold text-slate-800 block mb-2.5">
+                <i class="fa-solid fa-store text-actionOrange mr-1"></i> Chọn Sàn TMĐT bạn muốn ưu tiên nhận Voucher:
+              </label>
+              <div class="grid grid-cols-3 gap-3">
+                <button onclick="selectPlatform('Shopee')" id="platShopee" class="py-2.5 px-3.5 rounded-xl border-2 border-actionOrange bg-orange-50 text-actionOrange font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-xs">
+                  <i class="fa-solid fa-bag-shopping"></i> Shopee
+                </button>
+                <button onclick="selectPlatform('Lazada')" id="platLazada" class="py-2.5 px-3.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900 font-medium text-xs flex items-center justify-center gap-1.5 transition-all">
+                  <i class="fa-solid fa-cart-shopping text-cyberCyan"></i> Lazada
+                </button>
+                <button onclick="selectPlatform('TikTokShop')" id="platTikTok" class="py-2.5 px-3.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900 font-medium text-xs flex items-center justify-center gap-1.5 transition-all">
+                  <i class="fa-brands fa-tiktok text-pink-500"></i> TikTok Shop
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: Instant Calculated Results & Voucher Preview (5 Cols) -->
+          <div class="lg:col-span-5 bg-gradient-to-b from-slate-50 to-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-md space-y-5">
+            
+            <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-1.5">
+                <i class="fa-solid fa-chart-pie text-cyberCyan"></i> Kết Quả Mô Phỏng Tức Thì
+              </span>
+              <span class="text-[10px] bg-emerald-100 text-ecoGreen-dark px-2.5 py-0.5 rounded-full font-mono font-bold">Live calculation</span>
+            </div>
+
+            <!-- Main Impact Stats Grid -->
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
+                <div class="text-[11px] text-slate-500 flex items-center gap-1">
+                  <i class="fa-solid fa-weight-hanging text-cyberCyan"></i> Khối lượng rác:
+                </div>
+                <div class="text-xl font-extrabold text-slate-900 mt-1">
+                  <span id="resWeight">0.68</span> <span class="text-xs font-normal text-slate-500">kg</span>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
+                <div class="text-[11px] text-slate-500 flex items-center gap-1">
+                  <i class="fa-solid fa-cloud-arrow-down text-ecoGreen"></i> Giảm CO₂e:
+                </div>
+                <div class="text-xl font-extrabold text-ecoGreen mt-1">
+                  <span id="resCO2">3.40</span> <span class="text-xs font-normal text-slate-500">kg</span>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
+                <div class="text-[11px] text-slate-500 flex items-center gap-1">
+                  <i class="fa-solid fa-droplet text-blue-500"></i> Bảo vệ nước ngầm:
+                </div>
+                <div class="text-xl font-extrabold text-blue-600 mt-1">
+                  <span id="resWater">2,400</span> <span class="text-xs font-normal text-slate-500">lít</span>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-white border border-orange-200 shadow-xs">
+                <div class="text-[11px] text-actionOrange flex items-center gap-1 font-semibold">
+                  <i class="fa-solid fa-coins"></i> Green Points:
+                </div>
+                <div class="text-xl font-extrabold text-actionOrange mt-1">
+                  <span id="resPoints">170</span> <span class="text-xs font-normal text-slate-500">pts</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Virtual Voucher Card Reward Preview (Clean Bright Style) -->
+            <div class="relative rounded-2xl bg-gradient-to-r from-actionOrange via-amber-500 to-actionOrange p-0.5 shadow-md group">
+              <div class="rounded-[14px] bg-white p-4 flex items-center justify-between relative overflow-hidden">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-1.5">
+                    <span id="voucherPlatformBadge" class="text-[9px] uppercase font-extrabold px-2 py-0.5 rounded bg-actionOrange text-white">Shopee Eco Voucher</span>
+                    <span class="text-[10px] text-amber-700 font-mono font-bold">Hạn dùng 30 ngày</span>
+                  </div>
+                  <div class="text-2xl font-black text-slate-900 tracking-tight" id="voucherValueText">
+                    GIẢM 40.000 VNĐ
+                  </div>
+                  <p class="text-[11px] text-slate-600">Áp dụng cho đơn phụ kiện công nghệ từ 120K</p>
+                </div>
+                <div class="shrink-0 text-center pl-3 border-l border-slate-200">
+                  <i class="fa-solid fa-qrcode text-3xl text-slate-800"></i>
+                  <div class="text-[9px] text-slate-500 font-mono mt-1 font-bold">Mã: ECO-2026</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Trigger Button -->
+            <button onclick="claimVoucherSimulation()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-actionOrange to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold text-sm shadow-md shadow-orange-500/25 hover:shadow-orange-500/40 transition-all flex items-center justify-center gap-2 active:scale-98">
+              <i class="fa-solid fa-gift"></i>
+              <span>Nhận Mã Thả Rác & Lưu Voucher Ngay</span>
+            </button>
+
+            <p class="text-[10px] text-slate-500 text-center leading-normal">
+              * Điểm thưởng và voucher được đối soát tự động khi thiết bị được cân và quét QR tại Smart Drop-box đối tác.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION 6: SMART DROP-OFF MAP & NETWORK ==================== -->
+    <section id="dropoff-map" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-slate-200/80">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-ecoGreen-dark text-xs font-bold uppercase tracking-wider mb-4">
+          <i class="fa-solid fa-map-pin"></i> Mạng Lưới Điểm Tiếp Nhận
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Hơn 150+ Điểm <span class="text-transparent bg-clip-text bg-gradient-to-r from-ecoGreen to-cyberCyan">Smart Drop-Box Tiện Lợi</span>
+        </h2>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+          Tích hợp trực tiếp tại các bưu cục giao nhận TMĐT (Shopee Express, Viettel Post, Lazada Hub) và các chuỗi bán lẻ công nghệ hàng đầu, thuận tiện trên đường đi làm hoặc nhận hàng.
+        </p>
+      </div>
+
+      <!-- City Filter Tabs & Search Bar -->
+      <div class="glass-card rounded-2xl p-4 mb-8 flex flex-col md:flex-row items-center justify-between gap-4 bg-white border border-slate-200 shadow-sm">
+        
+        <!-- City Buttons -->
+        <div class="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+          <button onclick="filterMapCity('all')" id="cityAll" class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyberCyan to-ecoGreen text-white transition-all shrink-0 shadow-sm">
+            Tất cả (150+)
+          </button>
+          <button onclick="filterMapCity('hanoi')" id="cityHanoi" class="px-4 py-2 rounded-xl text-xs font-medium bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all shrink-0">
+            Hà Nội (58 điểm)
+          </button>
+          <button onclick="filterMapCity('hcm')" id="cityHcm" class="px-4 py-2 rounded-xl text-xs font-medium bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all shrink-0">
+            TP. Hồ Chí Minh (64 điểm)
+          </button>
+          <button onclick="filterMapCity('danang')" id="cityDanang" class="px-4 py-2 rounded-xl text-xs font-medium bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all shrink-0">
+            Đà Nẵng (28 điểm)
+          </button>
+        </div>
+
+        <!-- Search Bar Input -->
+        <div class="relative w-full md:w-72">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+          <input type="text" id="mapSearchInput" onkeyup="searchDropoffLocations()" placeholder="Tìm theo quận, tên đường, bưu cục..." class="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-ecoGreen focus:bg-white transition-all">
+        </div>
+
+      </div>
+
+      <!-- Map & Location List Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Location List (5 Cols) -->
+        <div class="lg:col-span-5 space-y-3.5 max-h-[500px] overflow-y-auto pr-2" id="locationList">
+          
+          <!-- Location 1 -->
+          <div class="loc-item p-4 rounded-2xl glass-card border border-emerald-300 hover:border-ecoGreen transition-all cursor-pointer bg-white shadow-xs" data-city="hanoi" onclick="focusDropoff(1)">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-[10px] uppercase font-bold text-actionOrange bg-orange-100 px-2 py-0.5 rounded border border-orange-200">Hub TMĐT</span>
+                <h4 class="text-sm font-bold text-slate-900 mt-1.5">Bưu cục Shopee Xpress - Cầu Giấy</h4>
+                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> Số 144 Xuân Thủy, Cầu Giấy, Hà Nội</p>
+              </div>
+              <span class="text-[10px] text-ecoGreen font-mono font-bold flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-ecoGreen animate-pulse"></span> Còn 82% chỗ
+              </span>
+            </div>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-regular fa-clock mr-1"></i>07:30 - 21:00</span>
+              <span class="text-cyberCyan font-bold hover:underline">Chỉ đường <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+            </div>
+          </div>
+
+          <!-- Location 2 -->
+          <div class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-city="hanoi" onclick="focusDropoff(2)">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-[10px] uppercase font-bold text-cyan-800 bg-cyan-100 px-2 py-0.5 rounded border border-cyan-200">Cửa hàng công nghệ</span>
+                <h4 class="text-sm font-bold text-slate-900 mt-1.5">FPT Shop Smart Hub - Đống Đa</h4>
+                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> 216 Thái Hà, Trung Liệt, Đống Đa, Hà Nội</p>
+              </div>
+              <span class="text-[10px] text-ecoGreen font-mono font-bold flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-ecoGreen animate-pulse"></span> Còn 95% chỗ
+              </span>
+            </div>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-regular fa-clock mr-1"></i>08:00 - 22:00</span>
+              <span class="text-cyberCyan font-bold hover:underline">Chỉ đường <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+            </div>
+          </div>
+
+          <!-- Location 3 -->
+          <div class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-city="hcm" onclick="focusDropoff(3)">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-[10px] uppercase font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">Hub Logistics</span>
+                <h4 class="text-sm font-bold text-slate-900 mt-1.5">Trạm Viettel Post - Quận 1</h4>
+                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> 125 Hai Bà Trưng, Bến Nghé, Quận 1, TP. HCM</p>
+              </div>
+              <span class="text-[10px] text-amber-600 font-mono font-bold flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span> Còn 45% chỗ
+              </span>
+            </div>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-regular fa-clock mr-1"></i>07:00 - 20:30</span>
+              <span class="text-cyberCyan font-bold hover:underline">Chỉ đường <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+            </div>
+          </div>
+
+          <!-- Location 4 -->
+          <div class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-city="hcm" onclick="focusDropoff(4)">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-[10px] uppercase font-bold text-actionOrange bg-orange-100 px-2 py-0.5 rounded border border-orange-200">Hub TMĐT</span>
+                <h4 class="text-sm font-bold text-slate-900 mt-1.5">Lazada Drop-Off Station - Bình Thạnh</h4>
+                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> 194 Bạch Đằng, Phường 24, Bình Thạnh, TP. HCM</p>
+              </div>
+              <span class="text-[10px] text-ecoGreen font-mono font-bold flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-ecoGreen"></span> Còn 70% chỗ
+              </span>
+            </div>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-regular fa-clock mr-1"></i>08:00 - 21:00</span>
+              <span class="text-cyberCyan font-bold hover:underline">Chỉ đường <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+            </div>
+          </div>
+
+          <!-- Location 5 -->
+          <div class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-city="danang" onclick="focusDropoff(5)">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-[10px] uppercase font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded border border-purple-200">Trường Đại Học</span>
+                <h4 class="text-sm font-bold text-slate-900 mt-1.5">Smart Box Ký Túc Xá ĐH Bách Khoa ĐN</h4>
+                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> 54 Nguyễn Lương Bằng, Liên Chiểu, Đà Nẵng</p>
+              </div>
+              <span class="text-[10px] text-ecoGreen font-mono font-bold flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-ecoGreen"></span> Còn 90% chỗ
+              </span>
+            </div>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span><i class="fa-regular fa-clock mr-1"></i>24/7 Tự phục vụ</span>
+              <span class="text-cyberCyan font-bold hover:underline">Chỉ đường <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Map Visual Mockup (7 Cols) -->
+        <div class="lg:col-span-7 rounded-3xl glass-card border border-slate-200 p-5 relative overflow-hidden flex flex-col justify-between min-h-[460px] bg-white shadow-md">
+          
+          <!-- Mockup Map UI Header -->
+          <div class="flex items-center justify-between z-10 bg-slate-50 p-3 rounded-xl border border-slate-200">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+              <span class="text-xs font-bold text-slate-800" id="mapStatusText">Đang hiển thị mạng lưới Drop-box: Hà Nội & TP. HCM</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-500 font-bold">GPS Live Sync</span>
+          </div>
+
+          <!-- Stylized Bright Vector Map Canvas -->
+          <div class="relative my-4 flex-1 flex items-center justify-center min-h-[300px] overflow-hidden rounded-xl bg-slate-100/70 border border-slate-200">
+            
+            <!-- Map Grid Lines -->
+            <div class="absolute inset-0 bg-circuit-grid opacity-30"></div>
+            
+            <!-- Stylized City Roads SVG -->
+            <svg class="absolute inset-0 w-full h-full stroke-slate-300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 120 Q 150 80, 300 200 T 700 160" stroke-width="3" stroke-dasharray="6 6" />
+              <path d="M100 -20 Q 220 180, 420 220 T 600 500" stroke-width="3" stroke-dasharray="8 8" />
+              <path d="M50 400 C 180 320, 320 380, 520 280" stroke-width="2.5" />
+            </svg>
+
+            <!-- Animated Map Pin 1 (Cầu Giấy) -->
+            <div class="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
+              <div class="relative flex items-center justify-center">
+                <span class="absolute w-10 h-10 rounded-full bg-cyan-400/30 animate-ping"></span>
+                <div class="w-8 h-8 rounded-full bg-cyberCyan text-white flex items-center justify-center shadow-lg shadow-cyan-500/40 font-bold text-xs">
+                  <i class="fa-solid fa-box-archive"></i>
+                </div>
+              </div>
+              <div class="absolute top-9 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-slate-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md border border-cyan-300 shadow-md">
+                Shopee Hub Cầu Giấy (82%)
+              </div>
+            </div>
+
+            <!-- Animated Map Pin 2 (Thái Hà) -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
+              <div class="relative flex items-center justify-center">
+                <span class="absolute w-8 h-8 rounded-full bg-emerald-400/30 animate-ping"></span>
+                <div class="w-7 h-7 rounded-full bg-ecoGreen text-white flex items-center justify-center shadow-lg shadow-emerald-500/40 font-bold text-xs">
+                  <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+              </div>
+              <div class="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-slate-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md border border-emerald-300 shadow-md">
+                FPT Shop Thái Hà (95%)
+              </div>
+            </div>
+
+            <!-- Animated Map Pin 3 (Hai Bà Trưng) -->
+            <div class="absolute bottom-1/4 right-1/4 -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
+              <div class="relative flex items-center justify-center">
+                <div class="w-7 h-7 rounded-full bg-actionOrange text-white flex items-center justify-center shadow-lg shadow-orange-500/40 font-bold text-xs">
+                  <i class="fa-solid fa-truck-fast"></i>
+                </div>
+              </div>
+              <div class="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-slate-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md border border-orange-300 shadow-md">
+                Viettel Post Q1 (45%)
+              </div>
+            </div>
+
+            <!-- Reverse Logistics Vehicle Animation Indicator -->
+            <div class="absolute bottom-5 left-6 bg-white p-2.5 rounded-xl border border-slate-200 text-xs flex items-center gap-3 shadow-md">
+              <div class="w-7 h-7 rounded-lg bg-emerald-100 flex items-center justify-center text-ecoGreen">
+                <i class="fa-solid fa-truck-moving animate-pulse"></i>
+              </div>
+              <div>
+                <div class="text-[11px] font-bold text-slate-900">Xe gom tuần hoàn #VN-88B</div>
+                <div class="text-[9px] text-slate-500">Đang di chuyển tới trạm Cầu Giấy (12 phút)</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Control Bar -->
+          <div class="flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-slate-100">
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-cyberCyan"></span> Tủ khóa tự động IoT
+              <span class="w-2 h-2 rounded-full bg-actionOrange ml-2"></span> Hub logistics TMĐT
+            </span>
+            <button onclick="openModal('dropoffModal')" class="text-ecoGreen font-bold hover:underline flex items-center gap-1">
+              Đăng ký gửi gom tận nơi <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION 7: TEAM SECTION (TH HUSTLE - LHU) ==================== -->
+    <section id="team" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-slate-200/80">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
+          <i class="fa-solid fa-graduation-cap text-ecoGreen"></i> Đội Thi TH HUSTLE &bull; Đại Học Lạc Hồng (LHU)
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Gặp Gỡ Đội Ngũ Sáng Lập <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyberCyan via-teal-600 to-ecoGreen">TH HUSTLE</span>
+        </h2>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+          Đề án tham dự <strong>Digital Business Contest 2026</strong> do <strong>VECOM</strong> & <strong>Khoa CNTT - Đại học Lạc Hồng</strong> tổ chức. Đội ngũ hội tụ sức mạnh thực chiến từ 3 chuyên ngành: <span class="text-slate-900 font-bold">Thương mại điện tử</span>, <span class="text-slate-900 font-bold">Truyền thông đa phương tiện</span> và <span class="text-slate-900 font-bold">Công nghệ thông tin</span>.
+        </p>
+      </div>
+
+      <!-- Team Big Banner (Group Photo + Interdisciplinary Synergy) -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 mb-14 border border-slate-200 shadow-xl bg-white overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Group Photo Container (7 Cols) -->
+          <div class="lg:col-span-7 relative group">
+            <div class="overflow-hidden rounded-2xl border-2 border-emerald-400 shadow-lg relative bg-slate-100">
+              <img src="assets/anh-nhom.jpg" alt="Đội ngũ TH HUSTLE - Sinh viên TMĐT LHU tham gia Digital Business Contest 2026" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500">
+              <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/90 via-slate-900/50 to-transparent p-4 sm:p-6 text-white">
+                <span class="text-[10px] uppercase font-mono font-bold tracking-widest text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/40">VECOM &bull; LHU &bull; DBC 2026</span>
+                <h3 class="text-lg sm:text-xl font-extrabold mt-1">TH HUSTLE | 01 Hành Trình Thực Chiến</h3>
+                <p class="text-xs text-slate-300 mt-0.5">Từ giảng đường đến những cơ hội thực tế &bull; Sáng tạo - Kế hoạch - Ứng dụng - Kết nối</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Synergy Breakdown (5 Cols) -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="inline-block px-3 py-1 rounded-lg bg-cyan-100 text-cyan-900 font-extrabold text-xs">
+              <i class="fa-solid fa-atom mr-1 text-cyberCyan"></i> Giao Thoa 3 Chuyên Ngành Cốt Lõi
+            </div>
+            <h3 class="text-2xl font-extrabold text-slate-900">
+              Sức Mạnh Liên Ngành Tạo Nên Đột Phá
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Dự án EcoTech Loop được xây dựng từ sự kết hợp chặt chẽ giữa 3 trụ cột tri thức, đảm bảo tính khả thi về mặt kỹ thuật, hấp dẫn về mặt hình ảnh và sinh lời bền vững về mặt kinh doanh:
+            </p>
+
+            <div class="space-y-3 pt-1">
+              <!-- Pillar 1: E-Commerce -->
+              <div class="p-3.5 rounded-xl bg-orange-50/70 border border-orange-200 flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-orange-100 text-actionOrange flex items-center justify-center shrink-0 text-sm font-bold">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900">Thương Mại Điện Tử (3 Thành Viên)</h4>
+                  <p class="text-[11px] text-slate-600 mt-0.5">Xây dựng mô hình O2O, chiến lược định giá Voucher và tối ưu tỷ lệ chuyển đổi khách hàng (CRO).</p>
+                </div>
+              </div>
+
+              <!-- Pillar 2: Multimedia -->
+              <div class="p-3.5 rounded-xl bg-purple-50/70 border border-purple-200 flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center shrink-0 text-sm font-bold">
+                  <i class="fa-solid fa-palette"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900">Truyền Thông Đa Phương Tiện (1 Thành Viên)</h4>
+                  <p class="text-[11px] text-slate-600 mt-0.5">Thiết kế nhận diện thương hiệu số, visual UI/UX và chiến dịch truyền thông xanh trên mạng xã hội.</p>
+                </div>
+              </div>
+
+              <!-- Pillar 3: IT -->
+              <div class="p-3.5 rounded-xl bg-cyan-50/70 border border-cyan-200 flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-cyan-100 text-cyberCyan flex items-center justify-center shrink-0 text-sm font-bold">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900">Công Nghệ Thông Tin (1 Thành Viên)</h4>
+                  <p class="text-[11px] text-slate-600 mt-0.5">Thiết kế kiến trúc hệ thống, tích hợp cảm biến IoT Smart Drop-box và cổng API đối soát EPR.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 5 Member Profile Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        
+        <!-- Member 1: Lê Nguyễn Hoàng Anh -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 border border-slate-200 bg-white flex flex-col justify-between group shadow-sm">
+          <div>
+            <!-- Member Photo Container -->
+            <div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative mb-4">
+              <img src="assets/hoang-anh.jpg" alt="Lê Nguyễn Hoàng Anh" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-actionOrange text-white text-[10px] font-bold shadow-xs">Trưởng Nhóm</span>
+            </div>
+            
+            <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-orange-100 text-orange-800 border border-orange-200 mb-2">
+              Thương Mại Điện Tử
+            </span>
+            <h4 class="text-base font-extrabold text-slate-900">Lê Nguyễn Hoàng Anh</h4>
+            <p class="text-xs text-slate-500 font-medium mt-0.5">Phát triển Mô hình Kinh doanh TMĐT</p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 mt-4 space-y-2">
+            <a href="tel:0398257484" class="flex items-center gap-2 text-xs text-slate-600 hover:text-actionOrange transition-colors">
+              <i class="fa-solid fa-phone text-actionOrange w-4"></i>
+              <span>0398 257 484</span>
+            </a>
+            <a href="mailto:hoananh20001@gmail.com" class="flex items-center gap-2 text-xs text-slate-600 hover:text-actionOrange transition-colors truncate" title="hoananh20001@gmail.com">
+              <i class="fa-solid fa-envelope text-actionOrange w-4"></i>
+              <span class="truncate">hoananh20001@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Member 2: Trần Nhật Hà -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 border border-slate-200 bg-white flex flex-col justify-between group shadow-sm">
+          <div>
+            <!-- Member Photo Container -->
+            <div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative mb-4">
+              <img src="assets/nhat-ha.jpg" alt="Trần Nhật Hà" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-emerald-600 text-white text-[10px] font-bold shadow-xs">Thành Viên</span>
+            </div>
+            
+            <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-orange-100 text-orange-800 border border-orange-200 mb-2">
+              Thương Mại Điện Tử
+            </span>
+            <h4 class="text-base font-extrabold text-slate-900">Trần Nhật Hà</h4>
+            <p class="text-xs text-slate-500 font-medium mt-0.5">Quản lý Logistics Ngược & Chuỗi Cung Ứng</p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 mt-4 space-y-2">
+            <a href="tel:0357201354" class="flex items-center gap-2 text-xs text-slate-600 hover:text-ecoGreen transition-colors">
+              <i class="fa-solid fa-phone text-ecoGreen w-4"></i>
+              <span>035 720 1354</span>
+            </a>
+            <a href="mailto:Trannhatha1804@gmail.com" class="flex items-center gap-2 text-xs text-slate-600 hover:text-ecoGreen transition-colors truncate" title="Trannhatha1804@gmail.com">
+              <i class="fa-solid fa-envelope text-ecoGreen w-4"></i>
+              <span class="truncate">Trannhatha1804@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Member 3: Thị Hoà -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 border border-slate-200 bg-white flex flex-col justify-between group shadow-sm">
+          <div>
+            <!-- Member Photo Container -->
+            <div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative mb-4">
+              <img src="assets/thi-hoa.jpg" alt="Thị Hoà" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-purple-600 text-white text-[10px] font-bold shadow-xs">Thành Viên</span>
+            </div>
+            
+            <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-800 border border-purple-200 mb-2">
+              Truyền Thông Đa Phương Tiện
+            </span>
+            <h4 class="text-base font-extrabold text-slate-900">Thị Hoà</h4>
+            <p class="text-xs text-slate-500 font-medium mt-0.5">Thiết kế UI/UX & Giám đốc Truyền Thông Xanh</p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 mt-4 space-y-2">
+            <a href="tel:0326354033" class="flex items-center gap-2 text-xs text-slate-600 hover:text-purple-600 transition-colors">
+              <i class="fa-solid fa-phone text-purple-600 w-4"></i>
+              <span>0326 354 033</span>
+            </a>
+            <a href="mailto:thih66008@gmail.com" class="flex items-center gap-2 text-xs text-slate-600 hover:text-purple-600 transition-colors truncate" title="thih66008@gmail.com">
+              <i class="fa-solid fa-envelope text-purple-600 w-4"></i>
+              <span class="truncate">thih66008@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Member 4: Lê Thị Thanh Tâm -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 border border-slate-200 bg-white flex flex-col justify-between group shadow-sm">
+          <div>
+            <!-- Member Photo Container -->
+            <div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative mb-4">
+              <img src="assets/thanh-tam.jpg" alt="Lê Thị Thanh Tâm" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-emerald-600 text-white text-[10px] font-bold shadow-xs">Thành Viên</span>
+            </div>
+            
+            <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-orange-100 text-orange-800 border border-orange-200 mb-2">
+              Thương Mại Điện Tử
+            </span>
+            <h4 class="text-base font-extrabold text-slate-900">Lê Thị Thanh Tâm</h4>
+            <p class="text-xs text-slate-500 font-medium mt-0.5">Nghiên cứu Thị trường & Gamification Đổi Voucher</p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 mt-4 space-y-2">
+            <a href="tel:0928632423" class="flex items-center gap-2 text-xs text-slate-600 hover:text-actionOrange transition-colors">
+              <i class="fa-solid fa-phone text-actionOrange w-4"></i>
+              <span>0928 632 423</span>
+            </a>
+            <a href="mailto:ltttamlhu256@gmail.com" class="flex items-center gap-2 text-xs text-slate-600 hover:text-actionOrange transition-colors truncate" title="ltttamlhu256@gmail.com">
+              <i class="fa-solid fa-envelope text-actionOrange w-4"></i>
+              <span class="truncate">ltttamlhu256@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Member 5: Đoàn Văn Phúc -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 border border-slate-200 bg-white flex flex-col justify-between group shadow-sm">
+          <div>
+            <!-- Member Photo Container -->
+            <div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative mb-4">
+              <img src="assets/van-phuc.jpg" alt="Đoàn Văn Phúc" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-cyan-600 text-white text-[10px] font-bold shadow-xs">Thành Viên</span>
+            </div>
+            
+            <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-cyan-100 text-cyan-800 border border-cyan-200 mb-2">
+              Công Nghệ Thông Tin
+            </span>
+            <h4 class="text-base font-extrabold text-slate-900">Đoàn Văn Phúc</h4>
+            <p class="text-xs text-slate-500 font-medium mt-0.5">Kỹ sư Hạ tầng Số & Tích hợp IoT Drop-box</p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 mt-4 space-y-2">
+            <a href="tel:0394624800" class="flex items-center gap-2 text-xs text-slate-600 hover:text-cyberCyan transition-colors">
+              <i class="fa-solid fa-phone text-cyberCyan w-4"></i>
+              <span>0394 624 800</span>
+            </a>
+            <a href="mailto:phucvandoan123@gmail.com" class="flex items-center gap-2 text-xs text-slate-600 hover:text-cyberCyan transition-colors truncate" title="phucvandoan123@gmail.com">
+              <i class="fa-solid fa-envelope text-cyberCyan w-4"></i>
+              <span class="truncate">phucvandoan123@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Integrated B2B EPR Capability Box (For Contest Judges & Enterprise) -->
+      <div class="mt-12 rounded-3xl glass-card border border-slate-200 p-6 sm:p-8 bg-gradient-to-r from-white via-emerald-50/40 to-cyan-50/40 shadow-md">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-2 text-xs font-bold text-ecoGreen uppercase tracking-wider">
+              <i class="fa-solid fa-certificate"></i> Khả Năng Mở Rộng B2B & Kiểm Toán EPR
+            </div>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900">
+              Sẵn Sàng Triển Khai Cho Các Nhãn Hàng & Sàn TMĐT
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+              Mô hình của đội TH HUSTLE không chỉ dừng lại ở ý tưởng sinh viên, mà đã được thiết kế sẵn sàng tích hợp API với các sàn TMĐT và cấp báo cáo phát thải Scope 3 chuẩn hóa theo Luật BVMT 2020.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-3 shrink-0">
+            <button onclick="downloadReportMock()" class="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:border-slate-400 text-slate-800 font-bold text-xs shadow-xs transition-all flex items-center gap-2">
+              <i class="fa-solid fa-file-arrow-down text-ecoGreen"></i>
+              <span>Tải Mẫu Báo Cáo EPR (PDF)</span>
+            </button>
+            <button onclick="openModal('b2bModal')" class="px-5 py-3 rounded-xl bg-actionOrange hover:bg-orange-600 text-white font-bold text-xs shadow-md shadow-orange-500/25 transition-all flex items-center gap-2">
+              <i class="fa-solid fa-handshake"></i>
+              <span>Liên Hệ Hợp Tác</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION 8: FAQ & GREEN KNOWLEDGE ==================== -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200/80">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Câu Hỏi Thường Gặp Về Thu Gom & Đổi Voucher</h2>
+        <p class="text-slate-500 text-sm mt-2">Mọi thắc mắc của bạn về quy chuẩn rác thải và quyền lợi tích điểm</p>
+      </div>
+
+      <div class="space-y-3" id="faqAccordion">
+        
+        <!-- FAQ 1 -->
+        <div class="rounded-2xl glass-card border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <button onclick="toggleFaq(1)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between text-sm font-bold text-slate-900 hover:text-ecoGreen transition-colors">
+            <span>1. Tôi có phải trả phí khi mang rác điện tử đến điểm Drop-off không?</span>
+            <i id="faqIcon1" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faqAnswer1" class="hidden px-4 sm:px-5 pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Hoàn toàn KHÔNG! Dịch vụ thu gom tại tất cả các điểm Smart Drop-box là 100% miễn phí. Không những không mất phí, bạn còn được nhận "Green Points" tương ứng để đổi lấy các Voucher giảm giá mua sắm trên Shopee, Lazada và TikTok Shop.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="rounded-2xl glass-card border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <button onclick="toggleFaq(2)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between text-sm font-bold text-slate-900 hover:text-ecoGreen transition-colors">
+            <span>2. Những thiết bị nào được chấp nhận thu gom?</span>
+            <i id="faqIcon2" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faqAnswer2" class="hidden px-4 sm:px-5 pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Chúng tôi tiếp nhận mọi thiết bị điện - điện tử cỡ nhỏ và vừa: Pin tiểu, pin sạc dự phòng, cáp sạc, củ sạc, tai nghe, điện thoại di động, máy tính bảng, chuột máy tính, bàn phím, loa mini bluetooth hỏng hoặc cũ không còn sử dụng.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="rounded-2xl glass-card border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <button onclick="toggleFaq(3)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between text-sm font-bold text-slate-900 hover:text-ecoGreen transition-colors">
+            <span>3. Dữ liệu cá nhân trong điện thoại cũ có an toàn không?</span>
+            <i id="faqIcon3" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faqAnswer3" class="hidden px-4 sm:px-5 pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Toàn bộ thiết bị có bộ nhớ khi chuyển về nhà máy xử lý đều trải qua quy trình khử từ tính và tiêu hủy chip nhớ vật lý (Degaussing & Physical Shredding) đạt chuẩn bảo mật dữ liệu công nghiệp. Bạn cũng nên khôi phục cài đặt gốc trước khi gửi.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="rounded-2xl glass-card border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <button onclick="toggleFaq(4)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between text-sm font-bold text-slate-900 hover:text-ecoGreen transition-colors">
+            <span>4. Dự án của đội TH HUSTLE có kế hoạch triển khai thực tế như thế nào?</span>
+            <i id="faqIcon4" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faqAnswer4" class="hidden px-4 sm:px-5 pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Giai đoạn 1 (Q2/2026): Thử nghiệm đặt 10 trạm Smart Drop-box tại Đại học Lạc Hồng và các bưu cục lân cận Biên Hòa - Đồng Nai. Giai đoạn 2: Tích hợp voucher với các shop phụ kiện TMĐT đối tác và mở rộng mạng lưới đến TP. Hồ Chí Minh.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER (PROFESSIONAL & COMPREHENSIVE) ==================== -->
+  <footer class="border-t border-slate-200 bg-white relative z-10 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-200">
+        
+        <!-- Brand & Mission Column (2 Cols) -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyberCyan to-ecoGreen p-0.5">
+              <div class="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
+                <i class="fa-solid fa-leaf text-ecoGreen text-sm"></i>
+              </div>
+            </div>
+            <span class="font-extrabold text-xl tracking-tight text-slate-900">EcoTech<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyberCyan to-ecoGreen">Loop</span></span>
+          </div>
+
+          <p class="text-xs text-slate-600 leading-relaxed max-w-sm">
+            Nền tảng Logistics ngược tiên phong tại Việt Nam tích hợp Thương mại điện tử và Kinh tế tuần hoàn. Giải pháp thu hồi rác điện tử thông minh, trao quyền cho người tiêu dùng và hỗ trợ doanh nghiệp tuân thủ EPR.
+          </p>
+
+          <!-- Competition Note -->
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 text-xs space-y-1">
+            <div class="text-actionOrange font-bold flex items-center gap-1.5">
+              <i class="fa-solid fa-award"></i> Đồ án Dự thi: Digital Business Contest 2026
+            </div>
+            <div class="text-slate-500 text-[11px]">
+              Đội thi: <strong>TH HUSTLE</strong> &bull; Khoa CNTT & Bộ môn TMĐT &bull; Đại học Lạc Hồng (LHU)
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">Hệ Thống Dịch Vụ</h4>
+          <ul class="space-y-2 text-xs text-slate-600">
+            <li><a href="#calculator" class="hover:text-ecoGreen transition-colors">Mô phỏng đổi voucher</a></li>
+            <li><a href="#dropoff-map" class="hover:text-ecoGreen transition-colors">Tra cứu Smart Drop-box</a></li>
+            <li><a href="#solution" class="hover:text-ecoGreen transition-colors">Quy trình O2O khép kín</a></li>
+            <li><a href="#team" class="hover:text-ecoGreen transition-colors">Đội ngũ TH HUSTLE</a></li>
+            <li><a href="#team" class="hover:text-ecoGreen transition-colors">Giải pháp EPR Doanh nghiệp</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Standards -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">Quy Chuẩn & Pháp Lý</h4>
+          <ul class="space-y-2 text-xs text-slate-600">
+            <li><a href="#" onclick="showToast('Tuân thủ nghiêm ngặt Luật Bảo vệ Môi trường 2020!')" class="hover:text-ecoGreen transition-colors">Luật BVMT số 72/2020/QH14</a></li>
+            <li><a href="#" onclick="showToast('Thực thi cơ chế EPR theo Nghị định 08/2022/NĐ-CP.')" class="hover:text-ecoGreen transition-colors">Nghị định 08/2022/NĐ-CP (EPR)</a></li>
+            <li><a href="#" onclick="showToast('Tiêu chuẩn châu Âu về giới hạn kim loại nặng.')" class="hover:text-ecoGreen transition-colors">Tiêu chuẩn RoHS & WEEE</a></li>
+            <li><a href="#" onclick="showToast('Cam kết bảo mật dữ liệu người dùng tuyệt đối.')" class="hover:text-ecoGreen transition-colors">Chính sách bảo mật dữ liệu</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Contact -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">Đăng Ký Bản Tin Xanh</h4>
+          <p class="text-xs text-slate-500 mb-3">Nhận thông tin voucher khuyến mãi TMĐT xanh và chiến dịch thu gom rác hàng tháng.</p>
+          <div class="space-y-2">
+            <input type="email" id="newsletterEmail" placeholder="Nhập email của bạn..." class="w-full px-3 py-2 text-xs bg-slate-50 rounded-xl border border-slate-300 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-ecoGreen">
+            <button onclick="subscribeNewsletter()" class="w-full py-2 bg-gradient-to-r from-cyberCyan to-ecoGreen text-white font-bold text-xs rounded-xl hover:opacity-90 transition-all shadow-xs">
+              Đăng Ký Ngay
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Bottom Links -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>
+          &copy; 2026 <strong>EcoTech Loop</strong> &bull; Đội <strong>TH HUSTLE</strong> (Đại học Lạc Hồng). Tất cả quyền được bảo lưu.
+        </div>
+        <div class="flex items-center gap-4 text-base text-slate-500">
+          <a href="#" class="hover:text-cyberCyan transition-colors" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="hover:text-cyberCyan transition-colors" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" class="hover:text-cyberCyan transition-colors" title="GitHub Project"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="hover:text-actionOrange transition-colors" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE MODAL 1: DROP-OFF SIMULATION ==================== -->
+  <div id="dropoffModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="glass-card bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 border border-slate-200 shadow-2xl relative animate-float">
+      <button onclick="closeModal('dropoffModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center space-y-3">
+        <div class="w-14 h-14 rounded-2xl bg-cyan-100 border border-cyan-200 text-cyberCyan flex items-center justify-center mx-auto text-2xl">
+          <i class="fa-solid fa-qrcode"></i>
+        </div>
+        <h3 class="text-xl font-extrabold text-slate-900">Mã QR Ký Gửi Smart Drop-Box</h3>
+        <p class="text-xs text-slate-600">
+          Đưa mã này lại trước camera của tủ thông minh tại bất kỳ điểm Drop-off nào để mở ngăn chứa tự động và tích điểm.
+        </p>
+
+        <!-- Simulated QR Code -->
+        <div class="p-3 bg-white rounded-2xl inline-block my-2 border border-slate-200 shadow-sm">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=EcoTechLoop-TH-HUSTLE-2026-DROPBOX-VALID" alt="Mã QR Ký Gửi Rác" class="w-36 h-36 mx-auto">
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-left space-y-1.5">
+          <div class="flex justify-between text-xs">
+            <span class="text-slate-500">Mã giao dịch:</span>
+            <span class="font-mono text-cyan-700 font-bold">#ETL-THHUSTLE-2026</span>
+          </div>
+          <div class="flex justify-between text-xs">
+            <span class="text-slate-500">Loại rác khai báo:</span>
+            <span class="text-slate-900 font-bold">Pin + Dây sạc hỏng</span>
+          </div>
+          <div class="flex justify-between text-xs">
+            <span class="text-slate-500">Ưu đãi chờ duyệt:</span>
+            <span class="text-actionOrange font-bold">Voucher Shopee 40.000đ</span>
+          </div>
+        </div>
+
+        <button onclick="confirmDropoffComplete()" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyberCyan to-ecoGreen text-white font-extrabold text-sm shadow-md hover:opacity-90 transition-all">
+          <i class="fa-solid fa-circle-check mr-1.5"></i> Tôi đã thả rác thành công
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== INTERACTIVE MODAL 2: B2B PARTNERSHIP FORM ==================== -->
+  <div id="b2bModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="glass-card bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-slate-200 shadow-2xl relative">
+      <button onclick="closeModal('b2bModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-orange-100 border border-orange-200 text-actionOrange flex items-center justify-center text-lg">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Liên Hệ Đội Thi TH HUSTLE</h3>
+            <p class="text-xs text-slate-500">Tư vấn giải pháp EPR & Nhận hồ sơ đề án Digital Business Contest 2026</p>
+          </div>
+        </div>
+
+        <form onsubmit="handleB2BSubmit(event)" class="space-y-3 pt-2">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Tên Doanh Nghiệp / Thương Hiệu *</label>
+            <input type="text" required placeholder="VD: Doanh nghiệp phân phối phụ kiện / Đối tác TMĐT" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs text-slate-800 focus:outline-none focus:border-ecoGreen focus:bg-white">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Họ Tên Người Đại Diện *</label>
+              <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs text-slate-800 focus:outline-none focus:border-ecoGreen focus:bg-white">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Số Điện Thoại / Zalo *</label>
+              <input type="tel" required placeholder="0987 654 321" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs text-slate-800 focus:outline-none focus:border-ecoGreen focus:bg-white">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Email Công Việc *</label>
+            <input type="email" required placeholder="partner@brand.vn" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs text-slate-800 focus:outline-none focus:border-ecoGreen focus:bg-white">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Nội Dung Hợp Tác</label>
+            <select class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs text-slate-700 focus:outline-none focus:border-ecoGreen focus:bg-white">
+              <option>Hợp tác thử nghiệm Smart Drop-box tại cơ sở kinh doanh</option>
+              <option>Tài trợ voucher đổi điểm cho người dùng TMĐT xanh</option>
+              <option>Tư vấn giải pháp thu hồi rác điện tử chuẩn EPR 2026</option>
+              <option>Kết nối giao lưu với Đội thi TH HUSTLE (LHU)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-actionOrange to-red-500 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-orange-500/25 hover:opacity-90 transition-all mt-2">
+            Gửi Yêu Cầu Kết Nối
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FLOATING TOAST NOTIFICATION CONTAINER ==================== -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden transition-all duration-300 transform translate-y-4">
+    <div class="glass-card bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3.5 max-w-sm">
+      <div id="toastIcon" class="w-9 h-9 rounded-xl bg-emerald-100 text-ecoGreen flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-bell"></i>
+      </div>
+      <div>
+        <h5 id="toastTitle" class="text-xs font-bold text-slate-900">Thông báo</h5>
+        <p id="toastMessage" class="text-[11px] text-slate-600 mt-0.5 leading-snug">Nội dung thông báo</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== EXTERNAL JAVASCRIPT LOGIC ==================== -->
+  <script src="js/main.js"></script>
+</body>
+</html>
