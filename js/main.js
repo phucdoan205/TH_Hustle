@@ -145,35 +145,32 @@ const stepDetails = {
   },
   2: {
     phase: "Giai đoạn 2 &bull; Tiếp Nhận Tại Smart Drop-box",
-    title: "Thả rác tự động & Xác thực bảo mật QR",
-    desc: "Đến các trạm Smart Drop-box đặt tại chuỗi bưu cục Shopee Express, Viettel Post hoặc FPT Shop. Quét mã QR cá nhân trên điện thoại, cửa tủ thông minh tự mở. Cảm biến tải trọng điện tử bên trong sẽ ghi nhận chính xác khối lượng rác được ký gửi.",
+    title: "Thả rác tự động & Quét mã QR",
+    desc: "Đến các trạm Smart Drop-box đặt tại các cơ sở của Trường. Quét mã QR trên Smart Drop-box",
     features: [
-      "Khóa điện tử IoT an toàn 24/7",
+      "Khóa an toàn",
       "Cảm biến cân đo chuẩn xác đến từng gram",
-      "Chống cháy nổ pin Lithium chuyên dụng",
-      "Tự động khử từ tính bảo mật dữ liệu"
+      "Hạn chế hư hỏng"
     ]
   },
   3: {
     phase: "Giai đoạn 3 &bull; Tích Điểm Xanh & Ví Điện Tử",
-    title: "Nhận Green Points tức thì vào tài khoản",
-    desc: "Ngay khi cửa tủ đóng lại và hệ thống hoàn tất kiểm đếm, điểm thưởng Green Points sẽ được chuyển thẳng vào ví EcoTech Loop liên kết với ví sàn TMĐT hoặc ví điện tử MoMo. Người dùng được xếp hạng trên bảng vinh danh Cư Dân Xanh.",
+    title: "Nhận Green Points khi quét mã QR",
+    desc: "Ngay khi cửa tủ đóng lại và hệ thống hoàn tất kiểm đếm, điểm thưởng Green Points sẽ được chuyển thẳng vào ví LHU Green.",
     features: [
-      "Cộng điểm thời gian thực (Real-time sync)",
-      "Bảng xếp hạng đóng góp giảm phát thải",
-      "Nhận chứng nhận số xanh để chia sẻ mạng xã hội",
-      "Tích lũy hạng thẻ thành viên VIP Xanh"
+      "Cộng điểm thời gian thực",
+      "Sẽ có bảng xếp hạng",
+      "Tích lũy hạng thẻ thành viên"
     ]
   },
   4: {
     phase: "Giai đoạn 4 &bull; Đổi Voucher & Tái Chế Khép Kín",
-    title: "Đổi Voucher mua phụ kiện mới & Tinh chế kim loại",
-    desc: "Người dùng sử dụng điểm để lấy voucher giảm giá độc quyền 20K - 100K mua sắm phụ kiện công nghệ trên Shopee/Lazada. Trong khi đó, các xe gom tuần hoàn đưa rác về thẳng nhà máy tinh chế đối tác để thu hồi 98% vàng, đồng và nhựa tái sinh.",
+    title: "Đổi Voucher để áp dụng",
+    desc: "Người dùng sử dụng điểm để lấy voucher giảm giá.",
     features: [
-      "Voucher áp dụng trực tiếp giỏ hàng TMĐT",
+      "Voucher áp dụng",
       "Kích cầu mua sắm sản phẩm công nghệ xanh",
-      "Thu hồi 98% kim loại quý và đất hiếm",
-      "Báo cáo truy xuất nguồn gốc phục vụ EPR"
+      "Thu hồi 98% kim loại quý và đất hiếm"
     ]
   }
 };
@@ -251,13 +248,6 @@ function filterMapCity(city) {
       btn.className = "px-4 py-2 rounded-xl text-xs font-medium bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all shrink-0";
     }
   }
-
-  const statusMap = {
-    all: "Đang hiển thị toàn bộ 150+ điểm Drop-box trên toàn quốc",
-    hanoi: "Đang hiển thị 58 điểm Smart Drop-box tại khu vực Hà Nội",
-    hcm: "Đang hiển thị 64 điểm Smart Drop-box tại TP. Hồ Chí Minh",
-    danang: "Đang hiển thị 28 điểm Smart Drop-box tại TP. Đà Nẵng"
-  };
   const statusEl = document.getElementById('mapStatusText');
   if (statusEl) statusEl.textContent = statusMap[city] || statusMap.all;
 }
