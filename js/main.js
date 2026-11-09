@@ -135,13 +135,12 @@ function confirmDropoffComplete() {
 const stepDetails = {
   1: {
     phase: "Giai đoạn 1 &bull; Người Tiêu Dùng O2O",
-    title: "Phân loại dễ dàng ngay tại bàn làm việc",
-    desc: "Người dùng gom các loại rác điện tử nhỏ lẻ phát sinh từ mua sắm online: củ sạc cháy, cáp đứt ngầm, pin sạc dự phòng chai phù, tai nghe Bluetooth hỏng 1 bên. Mở ứng dụng EcoTech Loop, bản đồ GPS sẽ chỉ đường đến hộp Smart Drop-box gần nhất chỉ trong bán kính 500m.",
+    title: "Phân loại dễ dàng ngay tại Smart Drop-box",
+    desc: "Người dùng gom các loại rác điện tử nhỏ lẻ phát sinh từ mua sắm online: củ sạc cháy, cáp đứt ngầm, pin sạc dự phòng chai phù, tai nghe Bluetooth hỏng 1 bên. Mở Mini App của LHU Green",
     features: [
-      "AI nhận diện qua camera điện thoại",
-      "Tự động ước lượng trọng lượng & điểm",
-      "Định vị 150+ điểm bưu cục & cửa hàng",
-      "Hỗ trợ gom tận nhà khi đơn TMĐT giao"
+      "Quét mã ngay trong Zalo",
+      "Dự định sẽ có mặt tại cs1, cs2, cs5 tại Trường Đại học Lạc Hồng",
+      "Hỗ trợ tích điểm để quy đổi"
     ]
   },
   2: {
