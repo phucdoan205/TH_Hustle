@@ -221,50 +221,125 @@ function switchStep(stepNum) {
 }
 
 // ==========================================
-// 3. DROP-OFF LOCATIONS & FILTER ENGINE
+// 3. DROP-OFF LOCATIONS & GOOGLE MAPS ENGINE
 // ==========================================
-function filterMapCity(city) {
-  const items = document.querySelectorAll('.loc-item');
-  items.forEach(item => {
-    if (city === 'all' || item.getAttribute('data-city') === city) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
+const dropoffLocations = {
+  1: {
+    name: "Trường đại học Lạc Hồng (Cơ sở 1)",
+    badge: '<i class="fa-solid fa-graduation-cap text-ecoGreen mr-1"></i> Cơ sở 1 &bull; Trụ sở chính',
+    address: "Số 10 Huỳnh Văn Nghệ, Trấn Biên, Đồng Nai, Việt Nam",
+    hours: "07:00 - 20:30",
+    mapUrl: "https://maps.google.com/maps?q=10.9530222,106.8022549&t=&z=17&ie=UTF8&iwloc=&output=embed",
+    directUrl: "https://maps.app.goo.gl/WjHapgoaRFmEgh1c7"
+  },
+  2: {
+    name: "Trường đại học Lạc Hồng (Cơ sở 2)",
+    badge: '<i class="fa-solid fa-graduation-cap text-cyberCyan mr-1"></i> Cơ sở 2 &bull; Khu thực hành',
+    address: "15/3B Huỳnh Văn Nghệ, P. Trấn Biên, Đồng Nai, Việt Nam",
+    hours: "06:00 - 22:00",
+    mapUrl: "https://maps.google.com/maps?q=10.9550497,106.8020956&t=&z=17&ie=UTF8&iwloc=&output=embed",
+    directUrl: "https://maps.app.goo.gl/TGGhq72u5YUwq2i28"
+  },
+  3: {
+    name: "Trường đại học Lạc Hồng (Cơ sở 5)",
+    badge: '<i class="fa-solid fa-graduation-cap text-ecoGreen mr-1"></i> Cơ sở 5 &bull; Trung tâm Công nghệ',
+    address: "XQ4Q+VH5, 579 Tân Ba - Bửu Long, Trấn Biên, Đồng Nai, Việt Nam",
+    hours: "07:30 - 20:30",
+    mapUrl: "https://maps.google.com/maps?q=10.9571446,106.7889922&t=&z=17&ie=UTF8&iwloc=&output=embed",
+    directUrl: "https://maps.app.goo.gl/A85W1wfZkGTLJhte9"
+  }
+};
+
+/**
+ * Focus and display Google Maps for a campus
+ * @param {number} index - 1, 2, or 3
+ */
+function focusDropoff(index) {
+  const loc = dropoffLocations[index];
+  if (!loc) return;
+
+  // 1. Update Map Iframe
+  const iframe = document.getElementById('googleMapIframe');
+  if (iframe) {
+    iframe.src = loc.mapUrl;
+  }
+
+  // 2. Update Map Header & Footer Information
+  const badgeEl = document.getElementById('activeMapBadge');
+  const nameEl = document.getElementById('activeMapName');
+  const addressEl = document.getElementById('activeMapAddress');
+  const hoursEl = document.getElementById('activeMapHours');
+  const directLinkEl = document.getElementById('openGoogleMapsBtn');
+
+  if (badgeEl) badgeEl.innerHTML = loc.badge;
+  if (nameEl) nameEl.textContent = loc.name;
+  if (addressEl) addressEl.textContent = loc.address;
+  if (hoursEl) hoursEl.textContent = loc.hours;
+  if (directLinkEl) directLinkEl.href = loc.directUrl;
+
+  // 3. Highlight selected card and campus button
+  for (let i = 1; i <= 3; i++) {
+    const card = document.getElementById(`locCard${i}`);
+    const btn = document.getElementById(`campusBtn${i}`);
+    
+    if (card) {
+      if (i === index) {
+        card.className = "loc-item p-4 rounded-2xl glass-card border-2 border-ecoGreen ring-2 ring-emerald-400/20 bg-emerald-50/30 transition-all cursor-pointer shadow-md";
+      } else {
+        card.className = "loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs";
+      }
     }
-  });
 
-  const buttons = {
-    all: document.getElementById('cityAll'),
-    hanoi: document.getElementById('cityHanoi'),
-    hcm: document.getElementById('cityHcm'),
-    danang: document.getElementById('cityDanang')
-  };
-
-  for (const [k, btn] of Object.entries(buttons)) {
-    if (!btn) continue;
-    if (k === city) {
-      btn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyberCyan to-ecoGreen text-white transition-all shrink-0 shadow-sm";
-    } else {
-      btn.className = "px-4 py-2 rounded-xl text-xs font-medium bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all shrink-0";
+    if (btn) {
+      if (i === index) {
+        btn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyberCyan to-ecoGreen text-white transition-all shrink-0 shadow-sm flex items-center gap-1.5";
+      } else {
+        btn.className = "px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition-all shrink-0 flex items-center gap-1.5";
+      }
     }
   }
-  const statusEl = document.getElementById('mapStatusText');
-  if (statusEl) statusEl.textContent = statusMap[city] || statusMap.all;
+
+  const allBtn = document.getElementById('campusAll');
+  if (allBtn) {
+    allBtn.className = "px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition-all shrink-0 flex items-center gap-1.5";
+  }
+
+  showToast(`Đã chuyển bản đồ đến: ${loc.name}`);
+}
+
+/**
+ * Filter / reset campus view
+ */
+function filterMapCampus(filter) {
+  const items = document.querySelectorAll('.loc-item');
+  items.forEach(item => {
+    item.style.display = 'block';
+  });
+
+  const allBtn = document.getElementById('campusAll');
+  if (allBtn) {
+    allBtn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyberCyan to-ecoGreen text-white transition-all shrink-0 shadow-sm flex items-center gap-1.5";
+  }
+
+  for (let i = 1; i <= 3; i++) {
+    const btn = document.getElementById(`campusBtn${i}`);
+    if (btn) {
+      btn.className = "px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition-all shrink-0 flex items-center gap-1.5";
+    }
+  }
+
+  focusDropoff(1);
 }
 
 function searchDropoffLocations() {
   const input = document.getElementById('mapSearchInput');
   if (!input) return;
-  const term = input.value.toLowerCase();
+  const term = input.value.toLowerCase().trim();
   const items = document.querySelectorAll('.loc-item');
   items.forEach(item => {
     const text = item.textContent.toLowerCase();
     item.style.display = text.includes(term) ? 'block' : 'none';
   });
-}
-
-function focusDropoff(index) {
-  showToast(`Đã chọn điểm Drop-off #${index}. Đang đồng bộ chỉ đường GPS...`);
 }
 
 // ==========================================

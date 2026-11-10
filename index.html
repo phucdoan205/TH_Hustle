@@ -224,7 +224,7 @@
     </section>
 
     <!-- ==================== LOGO CLOUD: ECOSYSTEM & PARTNERS ==================== -->
-    <section class="border-y border-slate-200/80 bg-white/70 py-7">
+    <!-- <section class="border-y border-slate-200/80 bg-white/70 py-7">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p class="text-xs uppercase tracking-widest font-extrabold text-slate-500 mb-5">
           Hệ sinh thái liên minh TMĐT
@@ -244,7 +244,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ==================== SECTION 3: PROBLEM & URGENCY ==================== -->
     <section id="problem" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -499,7 +499,7 @@
           Mô Phỏng Định Giá Rác Thải: <span class="text-transparent bg-clip-text bg-gradient-to-r from-actionOrange via-amber-500 to-orange-600">Đổi Điểm & Nhận Voucher</span>
         </h2>
         <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
-          Chọn loại thiết bị bạn muốn quyên góp. Thuật toán sẽ tính toán ngay lập tức khối lượng rác giải cứu, lượng CO₂e giảm phát thải và phần thưởng voucher mua sắm tương ứng!
+          Chọn loại thiết bị bạn muốn quyên góp và phần thưởng voucher mua sắm tương ứng!
         </p>
       </div>
 
@@ -611,7 +611,7 @@
             </div>
 
             <!-- E-Commerce Partner Selector -->
-            <div class="pt-4 border-t border-slate-200">
+            <!-- <div class="pt-4 border-t border-slate-200">
               <label class="text-xs font-bold text-slate-800 block mb-2.5">
                 <i class="fa-solid fa-store text-actionOrange mr-1"></i> Chọn Sàn TMĐT bạn muốn ưu tiên nhận Voucher:
               </label>
@@ -626,7 +626,7 @@
                   <i class="fa-brands fa-tiktok text-pink-500"></i> TikTok Shop
                 </button>
               </div>
-            </div>
+            </div> -->
 
           </div>
 
@@ -684,7 +684,6 @@
               <div class="rounded-[14px] bg-white p-4 flex items-center justify-between relative overflow-hidden">
                 <div class="space-y-1">
                   <div class="flex items-center gap-1.5">
-                    <span id="voucherPlatformBadge" class="text-[9px] uppercase font-extrabold px-2 py-0.5 rounded bg-actionOrange text-white">Shopee Eco Voucher</span>
                     <span class="text-[10px] text-amber-700 font-mono font-bold">Hạn dùng 30 ngày</span>
                   </div>
                   <div class="text-2xl font-black text-slate-900 tracking-tight" id="voucherValueText">
@@ -706,7 +705,7 @@
             </button>
 
             <p class="text-[10px] text-slate-500 text-center leading-normal">
-              * Điểm thưởng và voucher được đối soát tự động khi thiết bị được cân và quét QR tại Smart Drop-box đối tác.
+              * Điểm thưởng và voucher được đối soát tự động khi thiết bị được cân và quét QR tại Smart Drop-box.
             </p>
 
           </div>
@@ -726,27 +725,36 @@
           <i class="fa-solid fa-map-pin"></i> Mạng Lưới Điểm Tiếp Nhận
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-          Hơn 150+ Điểm <span class="text-transparent bg-clip-text bg-gradient-to-r from-ecoGreen to-cyberCyan">Smart Drop-Box Tiện Lợi</span>
+          Tích Hợp <span class="text-transparent bg-clip-text bg-gradient-to-r from-ecoGreen to-cyberCyan">Smart Drop-Box Tiện Lợi</span>
         </h2>
         <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
-          Tích hợp trực tiếp tại các bưu cục giao nhận TMĐT (Shopee Express, Viettel Post, Lazada Hub) và các chuỗi bán lẻ công nghệ hàng đầu, thuận tiện trên đường đi làm hoặc nhận hàng.
+          Tích hợp trực tiếp tại các cơ sở của Trường Đại học Lạc Hồng.
         </p>
       </div>
 
       <!-- City Filter Tabs & Search Bar -->
       <div class="glass-card rounded-2xl p-4 mb-8 flex flex-col md:flex-row items-center justify-between gap-4 bg-white border border-slate-200 shadow-sm">
         
-        <!-- City Buttons -->
+        <!-- Campus Buttons -->
         <div class="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
-          <button onclick="filterMapCity('all')" id="cityAll" class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyberCyan to-ecoGreen text-white transition-all shrink-0 shadow-sm">
-            Tất cả
+          <button onclick="filterMapCampus('all')" id="campusAll" class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyberCyan to-ecoGreen text-white transition-all shrink-0 shadow-sm flex items-center gap-1.5">
+            <i class="fa-solid fa-list-check"></i> Tất cả cơ sở
+          </button>
+          <button onclick="focusDropoff(1)" id="campusBtn1" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition-all shrink-0 flex items-center gap-1.5">
+            <i class="fa-solid fa-location-dot text-actionOrange"></i> Cơ sở 1
+          </button>
+          <button onclick="focusDropoff(2)" id="campusBtn2" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition-all shrink-0 flex items-center gap-1.5">
+            <i class="fa-solid fa-location-dot text-cyberCyan"></i> Cơ sở 2
+          </button>
+          <button onclick="focusDropoff(3)" id="campusBtn3" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition-all shrink-0 flex items-center gap-1.5">
+            <i class="fa-solid fa-location-dot text-ecoGreen"></i> Cơ sở 5
           </button>
         </div>
 
         <!-- Search Bar Input -->
         <div class="relative w-full md:w-72">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-          <input type="text" id="mapSearchInput" onkeyup="searchDropoffLocations()" placeholder="Tìm theo quận, tên đường, bưu cục..." class="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-ecoGreen focus:bg-white transition-all">
+          <input type="text" id="mapSearchInput" onkeyup="searchDropoffLocations()" placeholder="Tìm theo cơ sở, tên đường..." class="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-ecoGreen focus:bg-white transition-all">
         </div>
 
       </div>
@@ -755,119 +763,116 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
         <!-- Location List (5 Cols) -->
-        <div class="lg:col-span-5 space-y-3.5 max-h-[500px] overflow-y-auto pr-2" id="locationList">
+        <div class="lg:col-span-5 space-y-3.5 max-h-[520px] overflow-y-auto pr-2" id="locationList">
           
           <!-- Location 1 -->
-          <div class="loc-item p-4 rounded-2xl glass-card border border-emerald-300 hover:border-ecoGreen transition-all cursor-pointer bg-white shadow-xs" data-city="hanoi" onclick="focusDropoff(1)">
+          <div id="locCard1" class="loc-item p-4 rounded-2xl glass-card border-2 border-ecoGreen ring-2 ring-emerald-400/20 bg-emerald-50/30 transition-all cursor-pointer shadow-md" data-campus="1" onclick="focusDropoff(1)">
             <div class="flex items-start justify-between">
               <div>
                 <span class="text-[10px] uppercase font-bold text-actionOrange bg-orange-100 px-2 py-0.5 rounded border border-orange-200">Trường Đại Học</span>
-                <h4 class="text-sm font-bold text-slate-900 mt-1.5">Bưu cục Shopee Xpress - Cầu Giấy</h4>
-                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> Số 144 Xuân Thủy, Cầu Giấy, Hà Nội</p>
+                <h4 class="text-sm font-bold text-slate-900 mt-1.5">Trường đại học Lạc Hồng (Cơ sở 1)</h4>
+                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> Số 10 Huỳnh Văn Nghệ, Trấn Biên, Đồng Nai, Việt Nam</p>
               </div>
             </div>
             <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-              <span><i class="fa-regular fa-clock mr-1"></i>07:30 - 21:00</span>
-              <span class="text-cyberCyan font-bold hover:underline">Chỉ đường <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+              <span><i class="fa-regular fa-clock mr-1 text-ecoGreen"></i>07:00 - 20:30</span>
+              <button type="button" onclick="event.stopPropagation(); focusDropoff(1);" class="text-cyberCyan hover:text-ecoGreen font-bold flex items-center gap-1 transition-colors">
+                <span>Chỉ đường</span> <i class="fa-solid fa-diamond-turn-right text-xs"></i>
+              </button>
             </div>
           </div>
 
           <!-- Location 2 -->
-          <div class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-city="hanoi" onclick="focusDropoff(2)">
+          <div id="locCard2" class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-campus="2" onclick="focusDropoff(2)">
             <div class="flex items-start justify-between">
               <div>
                 <span class="text-[10px] uppercase font-bold text-cyan-800 bg-cyan-100 px-2 py-0.5 rounded border border-cyan-200">Trường Đại Học</span>
-                <h4 class="text-sm font-bold text-slate-900 mt-1.5">FPT Shop Smart Hub - Đống Đa</h4>
-                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> 216 Thái Hà, Trung Liệt, Đống Đa, Hà Nội</p>
+                <h4 class="text-sm font-bold text-slate-900 mt-1.5">Trường đại học Lạc Hồng (Cơ sở 2)</h4>
+                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> 15/3B Huỳnh Văn Nghệ, P. Trấn Biên, Đồng Nai, Việt Nam</p>
               </div>
             </div>
             <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-              <span><i class="fa-regular fa-clock mr-1"></i>08:00 - 22:00</span>
-              <span class="text-cyberCyan font-bold hover:underline">Chỉ đường <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+              <span><i class="fa-regular fa-clock mr-1 text-ecoGreen"></i>06:00 - 22:00</span>
+              <button type="button" onclick="event.stopPropagation(); focusDropoff(2);" class="text-cyberCyan hover:text-ecoGreen font-bold flex items-center gap-1 transition-colors">
+                <span>Chỉ đường</span> <i class="fa-solid fa-diamond-turn-right text-xs"></i>
+              </button>
             </div>
           </div>
 
           <!-- Location 3 -->
-          <div class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-city="hcm" onclick="focusDropoff(3)">
+          <div id="locCard3" class="loc-item p-4 rounded-2xl glass-card border border-slate-200 hover:border-emerald-300 transition-all cursor-pointer bg-white shadow-xs" data-campus="3" onclick="focusDropoff(3)">
             <div class="flex items-start justify-between">
               <div>
                 <span class="text-[10px] uppercase font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">Trường Đại Học</span>
-                <h4 class="text-sm font-bold text-slate-900 mt-1.5">Trạm Viettel Post - Quận 1</h4>
-                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> 125 Hai Bà Trưng, Bến Nghé, Quận 1, TP. HCM</p>
+                <h4 class="text-sm font-bold text-slate-900 mt-1.5">Trường đại học Lạc Hồng (Cơ sở 5)</h4>
+                <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-cyberCyan mr-1"></i> XQ4Q+VH5, 579 Tân Ba - Bửu Long, Trấn Biên, Đồng Nai, Việt Nam</p>
               </div>
             </div>
             <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-              <span><i class="fa-regular fa-clock mr-1"></i>07:00 - 20:30</span>
-              <span class="text-cyberCyan font-bold hover:underline">Chỉ đường <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+              <span><i class="fa-regular fa-clock mr-1 text-ecoGreen"></i>07:30 - 20:30</span>
+              <button type="button" onclick="event.stopPropagation(); focusDropoff(3);" class="text-cyberCyan hover:text-ecoGreen font-bold flex items-center gap-1 transition-colors">
+                <span>Chỉ đường</span> <i class="fa-solid fa-diamond-turn-right text-xs"></i>
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Interactive Map Visual Mockup (7 Cols) -->
-        <div class="lg:col-span-7 rounded-3xl glass-card border border-slate-200 p-5 relative overflow-hidden flex flex-col justify-between min-h-[460px] bg-white shadow-md">
+        <!-- Interactive Google Map Section (7 Cols) -->
+        <div class="lg:col-span-7 rounded-3xl glass-card border border-slate-200 p-5 relative overflow-hidden flex flex-col justify-between min-h-[500px] bg-white shadow-md">
+          
+          <!-- Top Bar: Campus Badge + Status + Direct Link -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div class="flex items-center gap-2">
+              <span id="activeMapBadge" class="text-xs font-bold text-ecoGreen px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 flex items-center gap-1.5">
+                <i class="fa-solid fa-graduation-cap text-ecoGreen"></i> Cơ sở 1 &bull; Trụ sở chính
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-semibold text-slate-600">
+                <span class="w-2 h-2 rounded-full bg-ecoGreen animate-ping"></span> Smart Drop-box Sẵn Sàng
+              </span>
+            </div>
 
-          <!-- Stylized Bright Vector Map Canvas -->
-          <div class="relative my-4 flex-1 flex items-center justify-center min-h-[300px] overflow-hidden rounded-xl bg-slate-100/70 border border-slate-200">
-            
-            <!-- Map Grid Lines -->
-            <div class="absolute inset-0 bg-circuit-grid opacity-30"></div>
-            
-            <!-- Stylized City Roads SVG -->
-            <svg class="absolute inset-0 w-full h-full stroke-slate-300" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M-10 120 Q 150 80, 300 200 T 700 160" stroke-width="3" stroke-dasharray="6 6" />
-              <path d="M100 -20 Q 220 180, 420 220 T 600 500" stroke-width="3" stroke-dasharray="8 8" />
-              <path d="M50 400 C 180 320, 320 380, 520 280" stroke-width="2.5" />
-            </svg>
+            <!-- Button to open native Google Maps link provided by user -->
+            <a id="openGoogleMapsBtn" href="https://maps.app.goo.gl/WjHapgoaRFmEgh1c7" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-cyberCyan to-ecoGreen hover:opacity-95 text-white text-xs font-bold shadow-xs transition-opacity flex items-center gap-1.5 whitespace-nowrap">
+              <i class="fa-solid fa-diamond-turn-right text-xs"></i>
+              <span>Mở Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
 
-            <!-- Animated Map Pin 1 (Cầu Giấy) -->
-            <div class="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
-              <div class="relative flex items-center justify-center">
-                <span class="absolute w-10 h-10 rounded-full bg-cyan-400/30 animate-ping"></span>
-                <div class="w-8 h-8 rounded-full bg-cyberCyan text-white flex items-center justify-center shadow-lg shadow-cyan-500/40 font-bold text-xs">
-                  <i class="fa-solid fa-box-archive"></i>
-                </div>
+          <!-- Embedded Interactive Google Map Iframe -->
+          <div class="relative my-3 flex-1 min-h-[380px] sm:min-h-[420px] rounded-2xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100">
+            <iframe 
+              id="googleMapIframe"
+              src="https://maps.google.com/maps?q=10.9530222,106.8022549&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+              class="w-full h-full min-h-[380px] sm:min-h-[420px] border-0" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Google Maps Chỉ đường Cơ sở Đại học Lạc Hồng">
+            </iframe>
+          </div>
+
+          <!-- Bottom Location Details Bar -->
+          <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+            <div class="space-y-1">
+              <div class="font-extrabold text-slate-900 flex items-center gap-1.5 text-sm">
+                <i class="fa-solid fa-location-dot text-actionOrange"></i>
+                <span id="activeMapName">Trường đại học Lạc Hồng (Cơ sở 1)</span>
               </div>
-              <div class="absolute top-9 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-slate-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md border border-cyan-300 shadow-md">
-                Shopee Hub Cầu Giấy (82%)
+              <div class="text-slate-600 text-[11px] flex items-center gap-1.5">
+                <i class="fa-solid fa-map-pin text-slate-400"></i>
+                <span id="activeMapAddress">Số 10 Huỳnh Văn Nghệ, Trấn Biên, Đồng Nai, Việt Nam</span>
               </div>
             </div>
 
-            <!-- Animated Map Pin 2 (Thái Hà) -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
-              <div class="relative flex items-center justify-center">
-                <span class="absolute w-8 h-8 rounded-full bg-emerald-400/30 animate-ping"></span>
-                <div class="w-7 h-7 rounded-full bg-ecoGreen text-white flex items-center justify-center shadow-lg shadow-emerald-500/40 font-bold text-xs">
-                  <i class="fa-solid fa-mobile-screen"></i>
-                </div>
-              </div>
-              <div class="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-slate-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md border border-emerald-300 shadow-md">
-                FPT Shop Thái Hà (95%)
-              </div>
+            <div class="flex items-center gap-2.5 shrink-0">
+              <span class="text-[11px] font-semibold text-slate-600 bg-white px-2.5 py-1 rounded-lg border border-slate-200">
+                <i class="fa-regular fa-clock text-ecoGreen mr-1"></i> <span id="activeMapHours">07:00 - 20:30</span>
+              </span>
+              <button onclick="openModal('dropoffModal')" class="px-3 py-1.5 rounded-lg bg-actionOrange hover:bg-orange-600 text-white font-bold text-xs shadow-xs transition-colors flex items-center gap-1">
+                <i class="fa-solid fa-box-archive text-[11px]"></i> Gửi Pin
+              </button>
             </div>
-
-            <!-- Animated Map Pin 3 (Hai Bà Trưng) -->
-            <div class="absolute bottom-1/4 right-1/4 -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
-              <div class="relative flex items-center justify-center">
-                <div class="w-7 h-7 rounded-full bg-actionOrange text-white flex items-center justify-center shadow-lg shadow-orange-500/40 font-bold text-xs">
-                  <i class="fa-solid fa-truck-fast"></i>
-                </div>
-              </div>
-              <div class="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-slate-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md border border-orange-300 shadow-md">
-                Viettel Post Q1 (45%)
-              </div>
-            </div>
-
-            <!-- Reverse Logistics Vehicle Animation Indicator -->
-            <div class="absolute bottom-5 left-6 bg-white p-2.5 rounded-xl border border-slate-200 text-xs flex items-center gap-3 shadow-md">
-              <div class="w-7 h-7 rounded-lg bg-emerald-100 flex items-center justify-center text-ecoGreen">
-                <i class="fa-solid fa-truck-moving animate-pulse"></i>
-              </div>
-              <div>
-                <div class="text-[11px] font-bold text-slate-900">Xe gom tuần hoàn #VN-88B</div>
-                <div class="text-[9px] text-slate-500">Đang di chuyển tới trạm Cầu Giấy (12 phút)</div>
-              </div>
-            </div>
-
           </div>
 
         </div>
